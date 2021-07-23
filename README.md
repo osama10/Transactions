@@ -10,7 +10,11 @@ First, clone this repository locally:
 $ git clone https://github.com/ios-qonto/REPOSITORY_NAME
 ```
 
-By default, Github provides a `/main` branch. Please create a `/feature` branch to complete your exercise. Feel free to follow your own git-flow logic while developing, but please open a pull request from the `/feature` to the `/main` branch once you completed this exercise. We will then use this pull request to review your code.
+By default, Github provides a `/main` branch. Please create a `/feature` branch to complete your exercise. Feel free to follow your own git-flow logic while developing, but please open a pull request from the `/feature` to the `/main` branch once you completed this exercise. 
+
+We will then use this pull request to review your code.
+
+**Note :** Adding a short video of your application on the description of the pull request will help us to review your work.
 
 # Let's make an application!
 
@@ -21,13 +25,18 @@ Start by reading the API documentation [https://randomuser.me/documentation](htt
 
 Feel free to use any third-party libraries you'd need.
 We favour quality over quantity, so here are a few things you should keep in mind:
-apply clean architecture standards
-apply developers good practices (SOLID, KISS, DRY etc...)
-cover some classes with tests (no need to cover everything)
 
-# Finish line
+- apply clean architecture standards
+- apply developers good practices (SOLID, KISS, DRY etc...)
+- cover some classes with tests (no need to cover everything)
+- target: min iOS13
 
-Finally, please create a readme file to explain your approach. We'd like to understand your technical choices, architectural decisions and what you could have done with more time. Also, explain how you could have split your work into reviewable sub-tasks in a real work environment.
+# Finish line : Tech Docs
+
+Finally, please create a dedicated MD file to explain your approach. We'd like to understand your technical choices, architectural decisions and what you could have done with more time. Also, explain how you could have split your work into reviewable sub-tasks in a real work environment.
+
+**Note :** please add how much time you spent to complete the challenge.
+
 We recommend you spend 1 hour to complete your readme.
 
 # Well done!
