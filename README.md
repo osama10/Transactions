@@ -1,6 +1,6 @@
 Before you start, we would like to congratulate you on reaching that stage of our hiring process; it's already a significant achievement!
 
-This is a technical exercise where we want to see the best of you. This exercise is limited to 3 days in total, so don't rush it and take the time you need within that limit. Please spare our reviewers, don't go too far; we recommend you spend around 4 hours on it.
+This is a technical exercise where we want to see the best of you. This exercise is limited to 3 days in total, so don't rush it and take the time you need within that limit. Please spare our reviewers, don't go too far;
 
 # How to submit your work
 Use this GitHub repository to push your code.
