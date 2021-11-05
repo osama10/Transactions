@@ -21,7 +21,7 @@ We will then use this pull request to review your code.
 Context - Qonto mobile developers strive to build applications where complex actions are made simple, fast and transparent for our users.
 
 Build an application that fetches data from this API - [https://randomuser.me](https://randomuser.me/) - and displays a list of Users. 
-Start by reading the API documentation [https://randomuser.me/documentation](https://randomuser.me/documentation). Your application should fetch multiple pages of Users from that API and display a list of Users with first and last names on one line and the email below. Following pages should be fetched when users scroll the list. While offline, previously loaded Users should still be accessible from the list and the details page.
+Start by reading the API documentation [https://randomuser.me/documentation](https://randomuser.me/documentation). Your application should fetch multiple pages of Users from that API and display a list of Users with first and last names on one line and the email below. Following pages should be fetched when users scroll the list. While offline, previously loaded Users should still be accessible from the list.
 
 ## Code guidelines
 
