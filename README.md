@@ -33,7 +33,6 @@ We favour quality over quantity, so here are a few things you should keep in min
 - your code should contain some developers' good practices (SOLID, KISS, DRY, etc...)
 - cover some classes with tests (no need to cover everything)
 - favor technologies you master rather than new, fancy ones
-- target: min iOS13
 
 # Part 2 - Present your work
 
