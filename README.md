@@ -50,6 +50,23 @@ Your next interview will be the Skills Test debrief where we will ask you to pre
 
 Please answer in 🇺🇸  English.
 
+# Retro
+
+We would much appreciate if you could quickly answer the following:
+
+1. How much time did you spend answering those questions?
+    - [ ]  Less than 3h
+    - [ ]  3h to 4h
+    - [ ]  4h to 5h
+    - [ ]  5h to 6h
+    - [ ]  More than 6h (your time: _________)
+2. How proud are you of your work? (Feel free to explain why)
+    - [ ]  Very proud
+    - [ ]  Fairly proud
+    - [ ]  Good enough
+    - [ ]  Somehow disappointed
+3. Is there anything missing that you think would be relevant to ask to candidates in the context of Skills Test?
+
 # Well done!
 
 Thank you for your time; if you have any questions, don't hesitate to contact us. We will quickly review your code and get back to you.
