@@ -52,8 +52,8 @@ Return:
 | TASK-003 | Implement networking layer               | DONE        | TASK-001                              | [TASK-003](TASK-003-implement-networking-layer.md) |
 | TASK-004 | Implement persistence controller         | DONE        | TASK-001                              | [TASK-004](TASK-004-implement-persistence-controller.md) |
 | TASK-005 | Define API DTOs                          | DONE        | TASK-001                              | [TASK-005](TASK-005-define-api-dtos.md) |
-| TASK-006 | Define SwiftData entity                  | NEXT        | TASK-001                              | [TASK-006](TASK-006-define-swiftdata-entity.md) |
-| TASK-007 | Implement DTO mapper                     | NOT_STARTED | TASK-002, TASK-005                    | [TASK-007](TASK-007-implement-dto-mapper.md) |
+| TASK-006 | Define SwiftData entity                  | DONE        | TASK-001                              | [TASK-006](TASK-006-define-swiftdata-entity.md) |
+| TASK-007 | Implement DTO mapper                     | NEXT        | TASK-002, TASK-005                    | [TASK-007](TASK-007-implement-dto-mapper.md) |
 | TASK-008 | Implement entity mapper                  | NOT_STARTED | TASK-002, TASK-006                    | [TASK-008](TASK-008-implement-entity-mapper.md) |
 | TASK-009 | Implement remote data source             | NOT_STARTED | TASK-003, TASK-005                    | [TASK-009](TASK-009-implement-remote-data-source.md) |
 | TASK-010 | Implement local data source              | NOT_STARTED | TASK-004, TASK-006                    | [TASK-010](TASK-010-implement-local-data-source.md) |
