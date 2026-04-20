@@ -86,6 +86,12 @@ This file tracks corrections and mistakes caught during plan/code reviews. Each 
 - **Correction:** Reworded to "Replace existing cached data with fresh data, then display it." Also changed failure path to "Keep existing cached transactions" for clarity.
 - **Lesson:** Wording matters in plans — describe the user-visible outcome, not the internal steps that could imply intermediate states.
 
+### 15. Networking layer was too basic — lacked proper request modeling and validation
+- **Task:** TASK-003 — Implement Networking Layer
+- **What was wrong:** Initial implementation used a bare `HTTPClientProtocol` with `func data(from url: URL)` that simply forwarded to URLSession. It had no HTTP method support, no headers, no status code validation, no response decoding, and no typed error handling. The error enum had vague cases like `.noConnection` and `.timeout` that duplicated URLSession's own error handling.
+- **Correction:** Rewrote to a proper `NetworkServicing` protocol with a generic `send<Response: Decodable>(_ request:)` method. Added `HTTPMethod` enum, `NetworkRequest` struct for request modeling, status code validation (2xx range), JSON decoding with typed errors, and `LocalizedError` conformance with descriptive messages. Error cases now map to actual failure points: `invalidURL`, `invalidResponse`, `requestFailed`, `unacceptableStatusCode`, `decodingFailed`.
+- **Lesson:** A networking layer should handle the full request lifecycle — building the request, validating the response, and decoding the result. Don't just wrap URLSession; add the validation and error mapping that every caller would otherwise duplicate.
+
 ### 13. Proposed Data Access Strategy section was redundant
 - **Section:** Proposed new section 7.1
 - **What was wrong:** User proposed a "Data Access Strategy" section describing network-first with fallback. This was already fully covered in the existing Offline Strategy section (Source of Truth + Sync Behavior).
