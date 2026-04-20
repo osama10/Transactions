@@ -47,7 +47,7 @@ Return:
 
 | Task ID  | Description                              | Status      | Dependencies                          | Task File |
 |----------|------------------------------------------|-------------|---------------------------------------|-----------|
-| TASK-001 | Create folder structure                  | NEXT        | none                                  | [TASK-001](TASK-001-create-folder-structure.md) |
+| TASK-001 | Create folder structure                  | IN_PROGRESS | none                                  | [TASK-001](TASK-001-create-folder-structure.md) |
 | TASK-002 | Define domain models                     | NOT_STARTED | TASK-001                              | [TASK-002](TASK-002-define-domain-models.md) |
 | TASK-003 | Implement networking layer               | NOT_STARTED | TASK-001                              | [TASK-003](TASK-003-implement-networking-layer.md) |
 | TASK-004 | Implement persistence controller         | NOT_STARTED | TASK-001                              | [TASK-004](TASK-004-implement-persistence-controller.md) |

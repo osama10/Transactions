@@ -11,7 +11,7 @@ import SwiftUI
 struct Qonto_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("Qonto")
         }
     }
 }
