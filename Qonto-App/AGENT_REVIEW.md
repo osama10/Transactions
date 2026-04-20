@@ -92,6 +92,18 @@ This file tracks corrections and mistakes caught during plan/code reviews. Each 
 - **Correction:** Rewrote to a proper `NetworkServicing` protocol with a generic `send<Response: Decodable>(_ request:)` method. Added `HTTPMethod` enum, `NetworkRequest` struct for request modeling, status code validation (2xx range), JSON decoding with typed errors, and `LocalizedError` conformance with descriptive messages. Error cases now map to actual failure points: `invalidURL`, `invalidResponse`, `requestFailed`, `unacceptableStatusCode`, `decodingFailed`.
 - **Lesson:** A networking layer should handle the full request lifecycle — building the request, validating the response, and decoding the result. Don't just wrap URLSession; add the validation and error mapping that every caller would otherwise duplicate.
 
+### 16. Persistence layer abstracted behind technology-agnostic protocol
+- **Task:** TASK-004 — Implement Persistence Controller
+- **What was wrong:** The original plan had `PersistenceController` directly creating and exposing a `ModelContainer`, coupling the Data layer to SwiftData. The local data source would have depended on SwiftData types directly, making it impossible to swap storage technologies without rewriting the Data layer.
+- **Correction:** Introduced a `Persistable` marker protocol and a `PersistenceServicing` protocol that defines generic CRUD operations (`fetchAll`, `count`, `insert`, `delete`, `deleteAll`, `save`) without importing SwiftData. `SwiftDataPersistenceService` implements the protocol using runtime casts from `Persistable` to `PersistentModel`. The protocol deliberately avoids `Predicate`/`SortDescriptor` in its interface since `FetchDescriptor` requires compile-time `PersistentModel` conformance — domain-specific querying (sorting, filtering) is handled by the local data source layer on top.
+- **Lesson:** Infrastructure abstractions should not leak framework types into their public interface. A marker protocol (`Persistable`) provides the boundary between storage-agnostic code and storage-specific implementations. Accept the trade-off of runtime type checks at the implementation boundary to keep the protocol clean.
+
+### 17. Force unwrap removed from SwiftDataPersistenceService, type-casting extracted
+- **Task:** TASK-004 — Implement Persistence Controller
+- **What was wrong:** `fetchAll` used `as! [T]` to cast fetch results — a force unwrap that would crash at runtime if the types didn't match. Additionally, the `guard let ... as? any PersistentModel` pattern was duplicated across every method (`insert`, `delete`, `deleteAll`, `count`, `fetchAll`).
+- **Correction:** Replaced `as! [T]` with `guard let ... as? [T] else { throw PersistenceError.incompatibleModelType }`. Extracted the repeated guard-cast pattern into two reusable helpers: `toPersistentModelType(_:)` for type casts and `toPersistentModel(_:)` for instance casts. Each public method is now a single-line cast + operation.
+- **Lesson:** Never use force unwraps at abstraction boundaries where type mismatches are possible. Extract repeated guard-throw patterns into throwing helpers to keep code DRY and make the error path consistent.
+
 ### 13. Proposed Data Access Strategy section was redundant
 - **Section:** Proposed new section 7.1
 - **What was wrong:** User proposed a "Data Access Strategy" section describing network-first with fallback. This was already fully covered in the existing Offline Strategy section (Source of Truth + Sync Behavior).

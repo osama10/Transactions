@@ -50,7 +50,7 @@ Return:
 | TASK-001 | Create folder structure                  | DONE        | none                                  | [TASK-001](TASK-001-create-folder-structure.md) |
 | TASK-002 | Define domain models                     | DONE        | TASK-001                              | [TASK-002](TASK-002-define-domain-models.md) |
 | TASK-003 | Implement networking layer               | DONE        | TASK-001                              | [TASK-003](TASK-003-implement-networking-layer.md) |
-| TASK-004 | Implement persistence controller         | NEXT        | TASK-001                              | [TASK-004](TASK-004-implement-persistence-controller.md) |
+| TASK-004 | Implement persistence controller         | IN_PROGRESS | TASK-001                              | [TASK-004](TASK-004-implement-persistence-controller.md) |
 | TASK-005 | Define API DTOs                          | NOT_STARTED | TASK-001                              | [TASK-005](TASK-005-define-api-dtos.md) |
 | TASK-006 | Define SwiftData entity                  | NOT_STARTED | TASK-001                              | [TASK-006](TASK-006-define-swiftdata-entity.md) |
 | TASK-007 | Implement DTO mapper                     | NOT_STARTED | TASK-002, TASK-005                    | [TASK-007](TASK-007-implement-dto-mapper.md) |

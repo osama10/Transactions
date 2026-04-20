@@ -70,9 +70,9 @@ A single-screen iOS app that fetches paginated banking transactions from a REST 
 - **Rules:** Knows about both Core and Domain. Orchestrates data flow between network and persistence.
 
 ### 3.4 Core Layer (Core/)
-- **Responsibility:** Provide infrastructure — HTTP client, SwiftData stack
-- **Contains:** `HTTPClient` protocol + `URLSessionHTTPClient`, `PersistenceController` (SwiftData container setup)
-- **Rules:** Framework-level code only. No business logic. No domain knowledge.
+- **Responsibility:** Provide infrastructure — HTTP client, persistence stack
+- **Contains:** `NetworkServicing` protocol + `URLSessionHTTPClient`, `PersistenceServicing` protocol + `SwiftDataPersistenceService`, `PersistenceController` (container factory)
+- **Rules:** Framework-level code only. No business logic. No domain knowledge. Infrastructure is hidden behind protocols — networking behind `NetworkServicing`, persistence behind `PersistenceServicing` — so the underlying technology (URLSession, SwiftData, etc.) can be swapped without changing upper layers.
 
 ---
 
@@ -186,7 +186,11 @@ Qonto-App/
 │   │   ├── APIEndpoint.swift             # URL construction
 │   │   └── NetworkError.swift            # Error types
 │   └── Persistence/
-│       └── PersistenceController.swift   # SwiftData container setup
+│       ├── Persistable.swift             # Marker protocol for storable models
+│       ├── PersistenceServicing.swift    # Abstract persistence CRUD protocol
+│       ├── SwiftDataPersistenceService.swift # SwiftData implementation
+│       ├── PersistenceController.swift   # ModelContainer factory
+│       └── PersistenceError.swift        # Persistence error types
 │
 ├── Domain/
 │   ├── Models/
