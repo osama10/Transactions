@@ -11,16 +11,12 @@ Create `Domain/UseCases/FetchTransactionsUseCase.swift`:
 
 ### Protocol: `FetchTransactionsUseCaseProtocol`
 - `func execute(page: Int, results: Int) async throws -> [Transaction]`
-- `func getCachedTransactions() async throws -> [Transaction]`
-- `func hasCache() async -> Bool`
 - `func clearCache() async throws`
 - Protocol must be `Sendable`
 
 ### Implementation: `FetchTransactionsUseCase`
 - Depends on `TransactionRepositoryProtocol` (injected via init)
 - `execute(page:results:)`: Forwards to `repository.fetchTransactions(page:results:)`
-- `getCachedTransactions()`: Forwards to `repository.getCachedTransactions()`
-- `hasCache()`: Forwards to `repository.hasCache()`
 - `clearCache()`: Forwards to `repository.clearCache()`
 
 **Note:** The use case is intentionally thin for this app. Its value is:
