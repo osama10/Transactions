@@ -8,7 +8,8 @@ struct TransactionRowViewModel {
     let methodDescription: String
     let statusLabel: String
     let statusColor: Color
-    let formattedDate: String
+    let formattedEmittedAt: String
+    let formattedSettledAt: String?
     let initiatorText: String?
 
     init(transaction: Transaction) {
@@ -19,7 +20,8 @@ struct TransactionRowViewModel {
         methodDescription = Self.buildMethodDescription(method: transaction.operationMethod, description: transaction.description)
         statusLabel = Self.label(for: transaction.status)
         statusColor = Self.color(for: transaction.status)
-        formattedDate = Self.formatDate(settledAt: transaction.settledAt, emittedAt: transaction.emittedAt)
+        formattedEmittedAt = "Emitted: \(transaction.emittedAt.formatted(date: .abbreviated, time: .shortened))"
+        formattedSettledAt = transaction.settledAt.map { "Settled: \($0.formatted(date: .abbreviated, time: .shortened))" }
         initiatorText = transaction.initiatorName.map { "by \($0)" }
     }
 
@@ -68,8 +70,4 @@ struct TransactionRowViewModel {
         }
     }
 
-    private static func formatDate(settledAt: Date?, emittedAt: Date) -> String {
-        let date = settledAt ?? emittedAt
-        return date.formatted(date: .abbreviated, time: .shortened)
-    }
 }

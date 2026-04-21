@@ -1,17 +1,15 @@
-//
-//  Qonto_AppApp.swift
-//  Qonto-App
-//
-//  Created by Osama Bin Bashir on 20.04.26.
-//
-
+import SwiftData
 import SwiftUI
 
 @main
 struct Qonto_AppApp: App {
+
+    @State private var diContainer = DIContainer()
+
     var body: some Scene {
         WindowGroup {
-            Text("Qonto")
+            TransactionListView(viewModel: diContainer.viewModel, networkMonitor: diContainer.networkMonitor)
         }
+        .modelContainer(diContainer.modelContainer)
     }
 }

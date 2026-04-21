@@ -38,10 +38,17 @@ struct TransactionRowView: View {
                     .background(viewModel.statusColor, in: .capsule)
             }
 
-            // Line 3: Date
-            Text(viewModel.formattedDate)
+            // Line 3: Emitted date
+            Text(viewModel.formattedEmittedAt)
                 .font(.caption)
                 .foregroundStyle(.tertiary)
+
+            // Line 4: Settled date (only if available)
+            if let settledAt = viewModel.formattedSettledAt {
+                Text(settledAt)
+                    .font(.caption)
+                    .foregroundStyle(.tertiary)
+            }
 
             // Optional: Initiator name
             if let initiatorText = viewModel.initiatorText {

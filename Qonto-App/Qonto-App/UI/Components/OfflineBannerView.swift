@@ -5,13 +5,13 @@ struct OfflineBannerView: View {
         HStack {
             Image(systemName: "wifi.slash")
 
-            Text("You're viewing cached data. Pull to refresh when back online.")
+            Text("No Internet")
                 .font(.subheadline)
         }
         .foregroundStyle(.secondary)
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.yellow.opacity(0.15), in: .rect(cornerRadius: 8))
+        .background(.red.opacity(0.15), in: .rect(cornerRadius: 8))
         .padding(.horizontal)
     }
 }

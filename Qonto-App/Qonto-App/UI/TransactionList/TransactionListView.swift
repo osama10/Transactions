@@ -2,15 +2,24 @@ import SwiftUI
 
 struct TransactionListView: View {
     @State private var viewModel: TransactionListViewModel
+    var networkMonitor: NetworkMonitor
 
-    init(viewModel: TransactionListViewModel) {
+    init(viewModel: TransactionListViewModel, networkMonitor: NetworkMonitor) {
         self.viewModel = viewModel
+        self.networkMonitor = networkMonitor
     }
 
     var body: some View {
         NavigationStack {
             content
                 .navigationTitle("Transactions")
+                .safeAreaInset(edge: .top) {
+                    if !networkMonitor.isConnected {
+                        OfflineBannerView()
+                            .transition(.move(edge: .top).combined(with: .opacity))
+                    }
+                }
+                .animation(.default, value: networkMonitor.isConnected)
         }
         .task {
             await viewModel.loadInitialTransactions()
@@ -28,20 +37,11 @@ struct TransactionListView: View {
         case .loaded:
             TransactionListBody(viewModel: viewModel)
 
-        case .empty:
-            EmptyStateView()
-
         case .error(let message):
             ErrorView(message: message) {
                 Task {
-                    await viewModel.refresh()
+                    await viewModel.loadInitialTransactions()
                 }
-            }
-
-        case .offline:
-            VStack(spacing: 0) {
-                OfflineBannerView()
-                TransactionListBody(viewModel: viewModel)
             }
         }
     }
@@ -54,7 +54,7 @@ private struct TransactionListBody: View {
 
     var body: some View {
         List {
-            ForEach(viewModel.sortedTransactions) { transaction in
+            ForEach(viewModel.transactions) { transaction in
                 TransactionRowView(viewModel: TransactionRowViewModel(transaction: transaction))
                     .task {
                         await viewModel.onTransactionAppear(transaction: transaction)
@@ -63,14 +63,6 @@ private struct TransactionListBody: View {
 
             if viewModel.isLoadingMore {
                 PaginationFooterView()
-            }
-
-            if let error = viewModel.paginationError {
-                PaginationErrorView(message: error) {
-                    Task {
-                        await viewModel.loadMoreTransactions()
-                    }
-                }
             }
         }
         .listStyle(.plain)
@@ -94,34 +86,15 @@ private struct PaginationFooterView: View {
     }
 }
 
-// MARK: - Pagination Error
-
-private struct PaginationErrorView: View {
-    let message: String
-    let retryAction: () -> Void
-
-    var body: some View {
-        HStack {
-            Text(message)
-                .font(.caption)
-                .foregroundStyle(.secondary)
-
-            Spacer()
-
-            Button("Retry", action: retryAction)
-                .font(.caption)
-                .buttonStyle(.bordered)
-        }
-        .listRowSeparator(.hidden)
-    }
-}
-
 // MARK: - Preview
 
 #Preview {
-    TransactionListView(viewModel: TransactionListViewModel(
-        fetchTransactionsUseCase: PreviewFetchTransactionsUseCase()
-    ))
+    TransactionListView(
+        viewModel: TransactionListViewModel(
+            fetchTransactionsUseCase: PreviewFetchTransactionsUseCase()
+        ),
+        networkMonitor: NetworkMonitor()
+    )
 }
 
 /// A mock use case for SwiftUI previews.

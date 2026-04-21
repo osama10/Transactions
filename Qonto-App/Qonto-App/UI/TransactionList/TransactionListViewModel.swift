@@ -9,28 +9,22 @@ final class TransactionListViewModel {
     enum ViewState: Equatable {
         case loading
         case loaded
-        case empty
         case error(String)
-        case offline
     }
 
     // MARK: - Constants
 
     private let pageSize = 30
 
-    // MARK: - Published State
+    // MARK: - State
 
     private(set) var viewState: ViewState = .loading
-    private(set) var sortedTransactions: [Transaction] = []
+    private(set) var transactions: [Transaction] = []
     private(set) var isLoadingMore = false
     private(set) var hasMorePages = true
-    private(set) var paginationError: String?
 
     // MARK: - Private State
 
-    private var transactions: [Transaction] = [] {
-        didSet { sortedTransactions = transactions.sorted { $0.emittedAt > $1.emittedAt } }
-    }
     private var currentPage = 1
     private let fetchTransactionsUseCase: FetchTransactionsUseCaseProtocol
 
@@ -58,7 +52,6 @@ final class TransactionListViewModel {
         guard !isLoadingMore, hasMorePages else { return }
 
         isLoadingMore = true
-        paginationError = nil
         defer { isLoadingMore = false }
 
         do {
@@ -66,13 +59,27 @@ final class TransactionListViewModel {
             let result = try await fetchTransactionsUseCase.execute(page: nextPage, results: pageSize)
             appendNewTransactions(result.transactions, forPage: nextPage)
         } catch {
-            paginationError = error.localizedDescription
+            // Pagination failure is silent — user can scroll again or pull-to-refresh
         }
     }
 
     func refresh() async {
-        resetPaginationState()
-        await loadInitialTransactions()
+        currentPage = 1
+        hasMorePages = true
+
+        do {
+            let result = try await fetchTransactionsUseCase.execute(page: 1, results: pageSize)
+            guard !result.isCached else { return }
+            handleInitialResult(result)
+            currentPage = 1
+        } catch is CancellationError {
+            // Refresh was cancelled — keep current state
+        } catch {
+            // If we have data, fail silently. Otherwise show error screen.
+            if transactions.isEmpty {
+                viewState = .error(error.localizedDescription)
+            }
+        }
     }
 
     func onTransactionAppear(transaction: Transaction) async {
@@ -87,12 +94,10 @@ final class TransactionListViewModel {
         transactions = result.transactions
 
         if result.isCached {
-            viewState = .offline
+            viewState = transactions.isEmpty ? .error("No cached data available.") : .loaded
             hasMorePages = false
         } else {
-            viewState = transactions.isEmpty ? .empty : .loaded
-            // If results == pageSize, we assume more pages exist. This may trigger one
-            // extra fetch that returns fewer results, which then sets hasMorePages to false.
+            viewState = .loaded
             hasMorePages = result.transactions.count >= pageSize
         }
     }
@@ -117,18 +122,12 @@ final class TransactionListViewModel {
         return newTransactions.filter { !existingIDs.contains($0.id) }
     }
 
-    private func resetPaginationState() {
-        currentPage = 1
-        hasMorePages = true
-        transactions = []
-        paginationError = nil
-    }
-
     private func isNearEndOfList(transaction: Transaction) -> Bool {
-        guard sortedTransactions.count >= 5,
-              let index = sortedTransactions.firstIndex(where: { $0.id == transaction.id }) else {
+        guard transactions.count >= 5,
+              let index = transactions.firstIndex(where: { $0.id == transaction.id }) else {
             return false
         }
-        return index >= sortedTransactions.count - 5
+        return index >= transactions.count - 5
     }
+
 }

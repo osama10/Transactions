@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A67E2B52F9814DE00D74D70 /* TESTING_PATH.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */; };
 		4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */; };
 		4A9020572F9672CB0006B5D6 /* PRODUCT_SPEC.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */; };
 		4A9020592F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TESTING_PATH.md; sourceTree = "<group>"; };
 		4A90201E2F9671CD0006B5D6 /* Qonto-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qonto-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Qonto-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9020352F9671D00006B5D6 /* Qonto-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Qonto-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 		4A9020152F9671CD0006B5D6 = {
 			isa = PBXGroup;
 			children = (
+				4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */,
 				4A9020742F9698150006B5D6 /* tasks */,
 				4A90205A2F968AB50006B5D6 /* AGENT_REVIEW.md */,
 				4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */,
@@ -307,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A67E2B52F9814DE00D74D70 /* TESTING_PATH.md in Resources */,
 				4A9020592F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md in Resources */,
 				4A90205B2F968AB50006B5D6 /* AGENT_REVIEW.md in Resources */,
 				4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */,
