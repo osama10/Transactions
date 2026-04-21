@@ -115,3 +115,25 @@ This file tracks corrections and mistakes caught during plan/code reviews. Each 
 - **What was wrong:** The plan said "insert/upsert new entities" without explaining how upsert works. The mechanism (check by `id`, update if exists, insert if not) was left implicit.
 - **Correction:** Expanded the bullet to: "upsert new entities: check by `id` — if a transaction with the same `id` already exists, update it; if not, insert it."
 - **Lesson:** Implementation-relevant details like upsert strategy should be explicit in the plan. "Upsert" alone is ambiguous — specify the key and behavior.
+
+---
+
+## Session: 2026-04-21
+
+### 18. Repository protocol exposed caching internals to the domain layer
+- **Task:** TASK-011 — Define Repository Protocol
+- **What was wrong:** The protocol included `getCachedTransactions()` and `hasCache()`. These leak the caching strategy into the domain layer. The ViewModel should never need to explicitly request cached data or check cache state — that's the repository's internal concern. `fetchTransactions` should handle the full strategy (remote-first, fallback to cache) internally.
+- **Correction:** Removed `getCachedTransactions()` and `hasCache()`. The protocol now has only `fetchTransactions(page:results:)` and `clearCache()`.
+- **Lesson:** Repository protocols should expose *what* the caller needs, not *how* the repository works internally. Caching strategy is an implementation detail — don't surface it in the contract.
+
+### 19. Default actor isolation changed from MainActor to nonisolated
+- **Task:** TASK-009 — Implement Remote Data Source
+- **What was wrong:** The project had `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor`, which caused all types (including DTOs and networking structs) to be implicitly `@MainActor`. This forced `nonisolated` annotations on every non-UI type to satisfy `Sendable` requirements.
+- **Correction:** Changed the Xcode build setting to `nonisolated`. Now only types that need main actor isolation (ViewModels, persistence layer, views) get explicit `@MainActor`. Pure data types work without annotation.
+- **Lesson:** Default MainActor isolation is best practice for UI-heavy apps, but when the project has significant non-UI layers (networking, DTOs, mappers, data sources), the `nonisolated` default with explicit `@MainActor` where needed is cleaner.
+
+### 20. PersistenceServicing was too basic — couldn't support real queries
+- **Task:** TASK-010 — Implement Local Data Source
+- **What was wrong:** `PersistenceServicing` only had `fetchAll` with no predicate or sort support. The local data source needed sorted fetches and predicate-based lookups (for upsert), so it bypassed the persistence layer entirely and used `ModelContext` directly.
+- **Correction:** Added `fetch(_:predicate:sortBy:)` to `PersistenceServicing`. Made `fetchAll` a default implementation. The `SwiftDataPersistenceService` implementation uses implicit existential opening to bridge `Persistable` → `PersistentModel`, with `Any`-typed parameters for predicate/sort to cross the generic boundary. Also removed `save()` — relying on SwiftData's autosave instead.
+- **Lesson:** Generic persistence abstractions must support the operations their consumers actually need. A CRUD layer without filtering or sorting forces consumers to bypass it, defeating the purpose of the abstraction.

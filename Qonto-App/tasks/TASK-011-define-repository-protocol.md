@@ -13,13 +13,9 @@ Create `Domain/Repositories/TransactionRepositoryProtocol.swift`:
 - Protocol, `Sendable`
 - `func fetchTransactions(page: Int, results: Int) async throws -> [Transaction]`
   - Returns domain models (not DTOs, not entities)
-  - The implementation will handle remote fetch, local fallback, mapping, and persistence
-- `func getCachedTransactions() async throws -> [Transaction]`
-  - Returns locally stored transactions for offline access
-- `func hasCache() async -> Bool`
-  - Returns whether any cached data exists
+  - The implementation handles remote fetch, local fallback, mapping, and caching internally
 - `func clearCache() async throws`
-  - Clears all locally stored transactions
+  - Clears all locally stored transactions (e.g. for pull-to-refresh)
 
 ## Acceptance Criteria
 - File exists in `Domain/Repositories/`
