@@ -56,8 +56,8 @@ Return:
 | TASK-007 | Implement DTO mapper                     | DONE        | TASK-002, TASK-005                    | [TASK-007](TASK-007-implement-dto-mapper.md) |
 | TASK-008 | Implement entity mapper                  | DONE        | TASK-002, TASK-006                    | [TASK-008](TASK-008-implement-entity-mapper.md) |
 | TASK-009 | Implement remote data source             | DONE        | TASK-003, TASK-005                    | [TASK-009](TASK-009-implement-remote-data-source.md) |
-| TASK-010 | Implement local data source              | IN_PROGRESS | TASK-004, TASK-006                    | [TASK-010](TASK-010-implement-local-data-source.md) |
-| TASK-011 | Define repository protocol               | NOT_STARTED | TASK-002                              | [TASK-011](TASK-011-define-repository-protocol.md) |
+| TASK-010 | Implement local data source              | DONE        | TASK-004, TASK-006                    | [TASK-010](TASK-010-implement-local-data-source.md) |
+| TASK-011 | Define repository protocol               | NEXT        | TASK-002                              | [TASK-011](TASK-011-define-repository-protocol.md) |
 | TASK-012 | Implement fetch transactions use case    | NOT_STARTED | TASK-002, TASK-011                    | [TASK-012](TASK-012-implement-fetch-transactions-use-case.md) |
 | TASK-013 | Implement transaction repository         | NOT_STARTED | TASK-007, TASK-008, TASK-009, TASK-010, TASK-011 | [TASK-013](TASK-013-implement-transaction-repository.md) |
 | TASK-014 | Implement transaction list ViewModel     | NOT_STARTED | TASK-002, TASK-012                    | [TASK-014](TASK-014-implement-transaction-list-viewmodel.md) |
