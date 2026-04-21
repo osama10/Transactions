@@ -3,7 +3,7 @@ import Foundation
 /// Protocol defining the use case for fetching transactions.
 /// Provides a testable boundary between the ViewModel and the Repository.
 protocol FetchTransactionsUseCaseProtocol: Sendable {
-    func execute(page: Int, results: Int, shouldRefresh: Bool) async throws -> [Transaction]
+    func execute(page: Int, results: Int) async throws -> FetchResult
 }
 
 /// Concrete implementation that delegates to the repository.
@@ -14,10 +14,7 @@ struct FetchTransactionsUseCase: FetchTransactionsUseCaseProtocol {
         self.repository = repository
     }
 
-    func execute(page: Int, results: Int, shouldRefresh: Bool) async throws -> [Transaction] {
-        if shouldRefresh {
-            try await repository.clearCache()
-        }
-        return try await repository.fetchTransactions(page: page, results: results)
+    func execute(page: Int, results: Int) async throws -> FetchResult {
+        try await repository.fetchTransactions(page: page, results: results)
     }
 }

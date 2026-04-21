@@ -2,12 +2,13 @@ import Foundation
 
 /// Protocol defining the contract for local persistence operations on transactions.
 /// All operations are `@MainActor`-isolated since they use SwiftData's `mainContext`.
+/// Methods are `async` so non-isolated callers can cross the actor boundary with `await`.
 @MainActor
-protocol TransactionLocalDataSourceProtocol {
-    func fetchAll() throws -> [TransactionEntity]
-    func save(entities: [TransactionEntity], page: Int) throws
-    func deleteAll() throws
-    func hasData() -> Bool
+protocol TransactionLocalDataSourceProtocol: Sendable {
+    func fetchAll() async throws -> [TransactionEntity]
+    func save(entities: [TransactionEntity], page: Int) async throws
+    func deleteAll() async throws
+    func hasData() async -> Bool
 }
 
 /// Concrete implementation that manages transaction persistence via the generic persistence layer.
@@ -20,7 +21,7 @@ final class TransactionLocalDataSource: TransactionLocalDataSourceProtocol {
         self.persistenceService = persistenceService
     }
 
-    func fetchAll() throws -> [TransactionEntity] {
+    func fetchAll() async throws -> [TransactionEntity] {
         try persistenceService.fetch(
             TransactionEntity.self,
             predicate: nil,
@@ -28,7 +29,7 @@ final class TransactionLocalDataSource: TransactionLocalDataSourceProtocol {
         )
     }
 
-    func save(entities: [TransactionEntity], page: Int) throws {
+    func save(entities: [TransactionEntity], page: Int) async throws {
         for entity in entities {
             let entityID = entity.id
             let existing = try persistenceService.fetch(
@@ -61,7 +62,7 @@ final class TransactionLocalDataSource: TransactionLocalDataSourceProtocol {
         try deleteOldestPages(keeping: maxCachedPages)
     }
 
-    func deleteAll() throws {
+    func deleteAll() async throws {
         try persistenceService.deleteAll(TransactionEntity.self)
     }
 
@@ -78,7 +79,7 @@ final class TransactionLocalDataSource: TransactionLocalDataSourceProtocol {
         }
     }
 
-    func hasData() -> Bool {
+    func hasData() async -> Bool {
         let count = (try? persistenceService.count(TransactionEntity.self)) ?? 0
         return count > 0
     }

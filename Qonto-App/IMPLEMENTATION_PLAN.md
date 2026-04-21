@@ -61,7 +61,7 @@ A single-screen iOS app that fetches paginated banking transactions from a REST 
 
 ### 3.2 Domain Layer (Domain/)
 - **Responsibility:** Define business models, repository protocols, and use cases
-- **Contains:** `Transaction` (domain model), `TransactionRepositoryProtocol`, `FetchTransactionsUseCase`
+- **Contains:** `Transaction` (domain model), `FetchResult` (enum), `TransactionRepositoryProtocol`, `FetchTransactionsUseCase`
 - **Rules:** No imports of SwiftData, Foundation networking, or UI frameworks. Pure Swift types and protocols.
 
 ### 3.3 Data Layer (Data/)
@@ -194,7 +194,8 @@ Qonto-App/
 │
 ├── Domain/
 │   ├── Models/
-│   │   └── Transaction.swift             # Domain model + enums
+│   │   ├── Transaction.swift             # Domain model + enums
+│   │   └── FetchResult.swift             # .fresh / .cached result enum
 │   ├── UseCases/
 │   │   └── FetchTransactionsUseCase.swift
 │   └── Repositories/
@@ -267,33 +268,53 @@ User scrolls near bottom
 - **Online:** Remote API is the source of truth. Fresh data is fetched, mapped to domain models, and persisted to SwiftData.
 - **Offline:** SwiftData is the fallback source of truth. The app displays cached transactions.
 
+### FetchResult Enum
+The repository returns a `FetchResult` enum (`.fresh([Transaction])` or `.cached([Transaction])`) so the presentation layer can distinguish remote data from offline fallback and render appropriate UI (e.g. offline banner, disable pagination).
+
+### Offline Fallback Rules
+- **Page-1-only fallback:** Cache is only served when page 1 fails. If page 2+ fails, the error is thrown — the user already has data on screen.
+- **No pre-fetch cache clear:** Cache is cleared only on a *successful* page 1 fetch, not before. This ensures pull-to-refresh while offline preserves cached data instead of destroying the safety net.
+
+### Scenario Matrix
+
+| # | Scenario | Repository Returns | ViewModel State |
+|---|----------|-------------------|-----------------|
+| 1 | Fresh launch, online | `.fresh(transactions)` | `.loaded` — pagination enabled |
+| 2 | Fresh launch, offline, no cache | throws error | `.error` — full-screen error + retry |
+| 3 | Fresh launch, offline, has cache | `.cached(transactions)` | `.offline` — cached list + offline banner, pagination disabled |
+| 4 | Online, loses network mid-scroll | throws error (page > 1) | Keep existing list, show pagination error footer |
+| 5 | Pull-to-refresh, offline | `.cached(transactions)` | `.offline` — cached data preserved + offline banner |
+| 6 | Pull-to-refresh, online | `.fresh(transactions)` | `.loaded` — fresh data, old cache cleared |
+
 ### Sync Behavior
 1. **On app launch / pull-to-refresh:**
    - Attempt to fetch page 1 from the API
-   - **Success:** Replace existing cached data with fresh data, then display it
-   - **Failure + cache exists:** Keep existing cached transactions and show a small non-dismissible informational strip below the nav bar (`wifi.slash` icon + "You're viewing cached data. Pull to refresh when back online.")
-   - **Failure + no cache:** Show full-screen error state with retry button
+   - **Success (`.fresh`):** Delete old cache, save fresh data, display it
+   - **Failure + cache exists (`.cached`):** Show cached transactions with offline banner (`wifi.slash` icon + "You're viewing cached data. Pull to refresh when back online."). Pagination disabled.
+   - **Failure + no cache (throws):** Show full-screen error state with retry button
 2. **On pagination (loading more):**
    - Attempt to fetch next page from API
-   - **Success:** Append and persist
-   - **Failure:** Show inline error at bottom of list with retry option; keep existing data visible
+   - **Success (`.fresh`):** Append and persist
+   - **Failure (throws):** Show inline error at bottom of list with retry option; keep existing data visible. No cache fallback for page > 1.
 3. **No background sync** — data is only fetched on user action (launch, scroll, pull-to-refresh)
 
 ### Persistence Rules
 - Store all fetched transactions in SwiftData with their `page` number
-- On fresh fetch (page 1), delete all existing entities before inserting (avoids stale data mixing with new seed data)
+- On fresh fetch (page 1 success), delete all existing entities before inserting (avoids stale data mixing with new seed data)
 - On pagination, upsert new entities: check by `id` — if a transaction with the same `id` already exists, update it; if not, insert it
+- Cache is never cleared before a fetch completes — only on successful page 1
 
 ### Local Storage Cap
-- Define a constant `maxCachedPages = 10` (~300 transactions max locally)
+- Define a constant `maxCachedPages = 5` (~150 transactions max locally)
 - When inserting a new page, if total stored pages exceeds `maxCachedPages`, delete the oldest page's entities (lowest page numbers first)
-- On pull-to-refresh, the cap naturally resets since all cached data is cleared before re-fetching
+- On pull-to-refresh (online), the cap naturally resets since all cached data is cleared on page 1 success
 - Page-based eviction keeps complete pages intact for a consistent offline experience
 
 ### SwiftData Threading
 - All SwiftData operations use `ModelContainer.mainContext` (which is `@MainActor`)
-- Inserts, deletes, and fetches all happen on the main actor
-- With 30 lightweight objects per page and a 300-item cap, operations are effectively instant — no need for a background `@ModelActor`
+- Inserts, deletes, and fetches all happen on the main actor via `MainActor.run` from non-isolated callers (like the repository)
+- With 30 lightweight objects per page and a 150-item cap, operations are effectively instant — no need for a background `@ModelActor`
+- The `@MainActor` isolation on the persistence layer is a fundamental constraint of SwiftData's `mainContext`. The `MainActor.run` ceremony in the repository is the correct trade-off: it keeps the data layer non-isolated while only hopping to the main actor for the specific moments SwiftData is touched
 - If performance ever becomes a concern (it won't at this scale), this can be migrated to `@ModelActor` later
 
 ---
@@ -430,7 +451,7 @@ ViewState:
 | Clean Architecture layers | Testable, clear separation | More files than a simple project needs |
 | No Combine, pure async/await | Modern, simpler mental model | Some reactive patterns are more verbose |
 | Manual DI over framework | No dependency, easy to understand | Slightly more wiring code |
-| Delete-and-reinsert on refresh | Simple, avoids merge conflicts | Brief moment of no cached data during refresh |
+| Delete cache only on successful page 1 | Protects offline safety net during failed refresh | Old cache persists until next successful fetch |
 | No detail screen | Stays in scope, saves time | Less polished product feel |
 | Page size of 30 | Good UX balance | Arbitrary — could be tuned |
 

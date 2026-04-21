@@ -4,7 +4,7 @@ import Foundation
 /// The underlying storage technology (SwiftData, Core Data, etc.) is an implementation detail.
 /// All operations are `@MainActor`-isolated since the app uses `mainContext`.
 @MainActor
-protocol PersistenceServicing {
+protocol PersistenceServicing: Sendable {
 
     /// Fetches records matching the given predicate and sort order.
     func fetch<T: Persistable>(
