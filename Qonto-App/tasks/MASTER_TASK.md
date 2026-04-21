@@ -59,8 +59,8 @@ Return:
 | TASK-010 | Implement local data source              | DONE        | TASK-004, TASK-006                    | [TASK-010](TASK-010-implement-local-data-source.md) |
 | TASK-011 | Define repository protocol               | DONE        | TASK-002                              | [TASK-011](TASK-011-define-repository-protocol.md) |
 | TASK-012 | Implement fetch transactions use case    | DONE        | TASK-002, TASK-011                    | [TASK-012](TASK-012-implement-fetch-transactions-use-case.md) |
-| TASK-013 | Implement transaction repository         | IN_PROGRESS | TASK-007, TASK-008, TASK-009, TASK-010, TASK-011 | [TASK-013](TASK-013-implement-transaction-repository.md) |
-| TASK-014 | Implement transaction list ViewModel     | NOT_STARTED | TASK-002, TASK-012                    | [TASK-014](TASK-014-implement-transaction-list-viewmodel.md) |
+| TASK-013 | Implement transaction repository         | DONE        | TASK-007, TASK-008, TASK-009, TASK-010, TASK-011 | [TASK-013](TASK-013-implement-transaction-repository.md) |
+| TASK-014 | Implement transaction list ViewModel     | NEXT        | TASK-002, TASK-012                    | [TASK-014](TASK-014-implement-transaction-list-viewmodel.md) |
 | TASK-015 | Implement transaction row view           | NOT_STARTED | TASK-002                              | [TASK-015](TASK-015-implement-transaction-row-view.md) |
 | TASK-017 | Implement supporting views               | NOT_STARTED | TASK-001                              | [TASK-017](TASK-017-implement-supporting-views.md) |
 | TASK-016 | Implement transaction list view          | NOT_STARTED | TASK-014, TASK-015, TASK-017          | [TASK-016](TASK-016-implement-transaction-list-view.md) |
