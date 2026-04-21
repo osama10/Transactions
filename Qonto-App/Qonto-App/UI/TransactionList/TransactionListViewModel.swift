@@ -21,13 +21,16 @@ final class TransactionListViewModel {
     // MARK: - Published State
 
     private(set) var viewState: ViewState = .loading
-    private(set) var transactions: [Transaction] = []
+    private(set) var sortedTransactions: [Transaction] = []
     private(set) var isLoadingMore = false
     private(set) var hasMorePages = true
     private(set) var paginationError: String?
 
     // MARK: - Private State
 
+    private var transactions: [Transaction] = [] {
+        didSet { sortedTransactions = transactions.sorted { $0.emittedAt > $1.emittedAt } }
+    }
     private var currentPage = 1
     private let fetchTransactionsUseCase: FetchTransactionsUseCaseProtocol
 
@@ -122,10 +125,10 @@ final class TransactionListViewModel {
     }
 
     private func isNearEndOfList(transaction: Transaction) -> Bool {
-        guard transactions.count >= 5,
-              let index = transactions.firstIndex(where: { $0.id == transaction.id }) else {
+        guard sortedTransactions.count >= 5,
+              let index = sortedTransactions.firstIndex(where: { $0.id == transaction.id }) else {
             return false
         }
-        return index >= transactions.count - 5
+        return index >= sortedTransactions.count - 5
     }
 }

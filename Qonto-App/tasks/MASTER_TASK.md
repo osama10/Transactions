@@ -63,8 +63,8 @@ Return:
 | TASK-014 | Implement transaction list ViewModel     | DONE        | TASK-002, TASK-012                    | [TASK-014](TASK-014-implement-transaction-list-viewmodel.md) |
 | TASK-015 | Implement transaction row view           | DONE        | TASK-002                              | [TASK-015](TASK-015-implement-transaction-row-view.md) |
 | TASK-017 | Implement supporting views               | DONE        | TASK-001                              | [TASK-017](TASK-017-implement-supporting-views.md) |
-| TASK-016 | Implement transaction list view          | NEXT        | TASK-014, TASK-015, TASK-017          | [TASK-016](TASK-016-implement-transaction-list-view.md) |
-| TASK-018 | Set up DI container and app wiring       | NOT_STARTED | TASK-001, TASK-002, TASK-003, TASK-004, TASK-005, TASK-006, TASK-007, TASK-008, TASK-009, TASK-010, TASK-011, TASK-012, TASK-013, TASK-014, TASK-015, TASK-016, TASK-017 | [TASK-018](TASK-018-setup-di-container-and-app-wiring.md) |
+| TASK-016 | Implement transaction list view          | DONE        | TASK-014, TASK-015, TASK-017          | [TASK-016](TASK-016-implement-transaction-list-view.md) |
+| TASK-018 | Set up DI container and app wiring       | NEXT        | TASK-001, TASK-002, TASK-003, TASK-004, TASK-005, TASK-006, TASK-007, TASK-008, TASK-009, TASK-010, TASK-011, TASK-012, TASK-013, TASK-014, TASK-015, TASK-016, TASK-017 | [TASK-018](TASK-018-setup-di-container-and-app-wiring.md) |
 | TASK-019 | Write unit tests for mappers             | NOT_STARTED | TASK-007, TASK-008                    | [TASK-019](TASK-019-unit-tests-mappers.md) |
 | TASK-020 | Write unit tests for ViewModel           | NOT_STARTED | TASK-014, TASK-012                    | [TASK-020](TASK-020-unit-tests-viewmodel.md) |
 | TASK-021 | Write unit tests for repository          | NOT_STARTED | TASK-013, TASK-009, TASK-010          | [TASK-021](TASK-021-unit-tests-repository.md) |
