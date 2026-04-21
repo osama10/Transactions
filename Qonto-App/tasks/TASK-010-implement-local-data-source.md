@@ -40,7 +40,7 @@ Create `Data/Local/TransactionLocalDataSource.swift`:
 **`deleteOldestPages(keeping:)`**
 - Find all distinct page numbers stored
 - If count > maxPages, delete entities from the lowest page numbers
-- `maxCachedPages = 10` (define as a constant)
+- `maxCachedPages = 5` (define as a constant)
 
 **`hasData()`**
 - Return true if at least one entity exists
@@ -49,7 +49,7 @@ Create `Data/Local/TransactionLocalDataSource.swift`:
 - Protocol + implementation exist in `Data/Local/`
 - All operations use `mainContext` (no background `@ModelActor`)
 - Upsert by `id` works correctly
-- Storage cap enforced at 10 pages
+- Storage cap enforced at 5 pages
 - `deleteAll` clears everything
 - `fetchAll` returns sorted results (most recent first)
 - File compiles successfully
