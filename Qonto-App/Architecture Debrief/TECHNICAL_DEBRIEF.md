@@ -86,7 +86,7 @@ Paginated requests (page > 1) that fail do **not** fall back to cache — they f
 
 ### KISS — Keep It Simple
 
-- Three view states (`.loading`, `.loaded`, `.error`) instead of a complex state machine. Pagination and refresh failures are silent when data exists — no alerts, no inline error views, just sensible defaults.
+- Three view states (`.loading`, `.loaded`, `.error`) instead of a complex state machine. Pagination and refresh failures are silent when data exists — no alerts, no inline error views, just sensible defaults. All silent failures are logged via `QontoLogger` (OSLog) so they remain observable in Console.app without impacting the user.
 - No Combine, no reactive chains. Pure `async/await` everywhere.
 - No third-party dependencies. Apple frameworks handle everything needed.
 

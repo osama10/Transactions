@@ -4,7 +4,7 @@ import Foundation
 @Observable
 final class TransactionListViewModel {
     
-    // MARK: - Contstant
+    // MARK: - Constants
     private let errorMessage = "Something went wrong. Please try again."
 
     // MARK: - ViewState
@@ -62,7 +62,7 @@ final class TransactionListViewModel {
             let result = try await fetchTransactionsUseCase.execute(page: nextPage, results: pageSize)
             appendNewTransactions(result.transactions, forPage: nextPage)
         } catch {
-            // Pagination failure is silent — user can scroll again or pull-to-refresh
+            QontoLogger.warning("Pagination failed for page \(currentPage + 1): \(error.localizedDescription)", caller: Self.self)
         }
     }
 
@@ -76,9 +76,10 @@ final class TransactionListViewModel {
             handleInitialResult(result)
             currentPage = 1
         } catch {
-            // If we have data, fail silently. Otherwise show error screen.
             if transactions.isEmpty {
                 viewState = .error(errorMessage)
+            } else {
+                QontoLogger.warning("Refresh failed silently (data on screen): \(error.localizedDescription)", caller: Self.self)
             }
         }
     }

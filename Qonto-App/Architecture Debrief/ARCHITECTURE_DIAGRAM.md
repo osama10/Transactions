@@ -202,7 +202,8 @@ sequenceDiagram
 App/
 ├── Core/
 │   ├── Networking/         URLSessionHTTPClient, NetworkServicing, APIEndpoint, NetworkMonitor, NetworkError
-│   └── Persistence/        SwiftDataPersistenceService, PersistenceServicing, PersistenceController, Persistable, PersistenceError
+│   ├── Persistence/        SwiftDataPersistenceService, PersistenceServicing, PersistenceController, Persistable, PersistenceError
+│   └── Logging/            QontoLogger (OSLog wrapper)
 ├── Data/
 │   ├── Repositories/       TransactionRepository
 │   ├── Mappers/            TransactionDTOMapper, TransactionEntityMapper, MappingError

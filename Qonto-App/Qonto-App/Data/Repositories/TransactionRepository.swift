@@ -50,7 +50,7 @@ struct TransactionRepository: TransactionRepositoryProtocol {
             }
             try await localDataSource.save(entities: entities, page: page)
         } catch {
-            // Cache save failure is non-fatal; we still return the remote data
+            QontoLogger.warning("Cache save failed for page \(page): \(error.localizedDescription)", caller: Self.self)
         }
     }
 
