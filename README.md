@@ -67,13 +67,13 @@ We would much appreciate if you could quickly answer the following:
     - [ ]  3h to 4h
     - [ ]  4h to 5h
     - [ ]  5h to 6h
-    - [ ]  More than 6h (your time: _________)
+    - [x]  More than 6h (your time: around 8 or 9)
 2. How proud are you of your work? (Feel free to explain why)
-    - [ ]  Very proud
+    - [x]  Very proud : I have done it with the best of my abilites. I use all the software knowledge that I have and implemented in it . Even if I fail i wont feel any regrets.
     - [ ]  Fairly proud
     - [ ]  Good enough
     - [ ]  Somehow disappointed
-3. Is there anything missing that you think would be relevant to ask to candidates in the context of Skills Test?
+3. Is there anything missing that you think would be relevant to ask to candidates in the context of Skills Test? No I think this more than good. I personally believe though it should be of more than 2 days. 
 
 # Well done!
 
