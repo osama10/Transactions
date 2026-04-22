@@ -68,8 +68,8 @@ Return:
 | TASK-019 | Write unit tests for mappers             | DONE        | TASK-007, TASK-008                    | [TASK-019](TASK-019-unit-tests-mappers.md) |
 | TASK-020 | Write unit tests for ViewModel           | DONE        | TASK-014, TASK-012                    | [TASK-020](TASK-020-unit-tests-viewmodel.md) |
 | TASK-021 | Write unit tests for repository          | DONE        | TASK-013, TASK-009, TASK-010          | [TASK-021](TASK-021-unit-tests-repository.md) |
-| TASK-022 | Manual testing and bug fixes             | IN_PROGRESS | TASK-018                              | [TASK-022](TASK-022-manual-testing-and-bug-fixes.md) |
-| TASK-023 | Write technical debrief document         | NOT_STARTED | all previous tasks                    | [TASK-023](TASK-023-write-technical-debrief.md) |
+| TASK-022 | Manual testing and bug fixes             | DONE        | TASK-018                              | [TASK-022](TASK-022-manual-testing-and-bug-fixes.md) |
+| TASK-023 | Write technical debrief document         | NEXT        | all previous tasks                    | [TASK-023](TASK-023-write-technical-debrief.md) |
 | TASK-024 | Add OSLog logger for non-fatal events    | NOT_STARTED | TASK-013, TASK-007, TASK-008          | [TASK-024](TASK-024-add-os-logger.md) |
 
 ---
