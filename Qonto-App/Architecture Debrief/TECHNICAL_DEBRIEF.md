@@ -215,6 +215,14 @@ Because all dependencies flow through `DIContainer` via initializer parameters, 
 
 ---
 
+## 9. AI-Assisted Development
+
+I used Claude as a **structured engineering assistant** — not as a code generator. The workflow was: spec first, plan second, then execute one task at a time with approval gates between each step. Every AI output was reviewed, and corrections were tracked in `AGENT_REVIEW.md`. The AI operated within strict constraints: no jumping ahead, no redesigning the plan, no merging tasks.
+
+For full details on the prompting strategy, concrete examples of corrections (architecture violations, offline strategy fixes, over-engineering removal), and the control principles applied, see [`AGENTIC_AI_USAGE.md`](../AGENTIC_AI_USAGE.md).
+
+---
+
 ## Summary
 
 This project demonstrates a clean, testable, and production-ready architecture for a transaction list feature. The key decisions — Clean Architecture with MVVM, protocol-based DI, network-first with offline fallback, and a simplified error UX — were all made deliberately to balance engineering rigor with practical simplicity. Every component can be tested in isolation, extended without modifying existing code, and explained clearly in a technical discussion.
