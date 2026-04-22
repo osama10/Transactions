@@ -32,7 +32,7 @@ struct TransactionListView: View {
     private var content: some View {
         switch viewModel.viewState {
         case .loading:
-            LoadingView()
+            ProgressView("Loading transactions...")
 
         case .loaded:
             TransactionListBody(viewModel: viewModel)

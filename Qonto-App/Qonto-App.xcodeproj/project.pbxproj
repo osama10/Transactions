@@ -10,6 +10,7 @@
 		4A67E2B52F9814DE00D74D70 /* TESTING_PATH.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */; };
 		4A67E3892F9864E900D74D70 /* TECHNICAL_DEBRIEF.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3872F9864E900D74D70 /* TECHNICAL_DEBRIEF.md */; };
 		4A67E38A2F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */; };
+		4A67E3F02F98742D00D74D70 /* AGENTIC_AI_USAGE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */; };
 		4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */; };
 		4A9020572F9672CB0006B5D6 /* PRODUCT_SPEC.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */; };
 		4A9020592F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */; };
@@ -54,6 +55,7 @@
 		4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TESTING_PATH.md; sourceTree = "<group>"; };
 		4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ARCHITECTURE_DIAGRAM.md; sourceTree = "<group>"; };
 		4A67E3872F9864E900D74D70 /* TECHNICAL_DEBRIEF.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TECHNICAL_DEBRIEF.md; sourceTree = "<group>"; };
+		4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AGENTIC_AI_USAGE.md; sourceTree = "<group>"; };
 		4A90201E2F9671CD0006B5D6 /* Qonto-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qonto-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Qonto-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Api-Doc.pdf"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		4A9020152F9671CD0006B5D6 = {
 			isa = PBXGroup;
 			children = (
+				4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */,
 				4A67E3882F9864E900D74D70 /* Architecture Debrief */,
 				4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */,
 				4A9020742F9698150006B5D6 /* tasks */,
@@ -284,6 +287,7 @@
 				4A9020752F9698150006B5D6 /* TASK-010-implement-local-data-source.md in Resources */,
 				4A9020762F9698150006B5D6 /* TASK-009-implement-remote-data-source.md in Resources */,
 				4A9020772F9698150006B5D6 /* MASTER_TASK.md in Resources */,
+				4A67E3F02F98742D00D74D70 /* AGENTIC_AI_USAGE.md in Resources */,
 				4A9020782F9698150006B5D6 /* TASK-022-manual-testing-and-bug-fixes.md in Resources */,
 				4A9020792F9698150006B5D6 /* TASK-012-implement-fetch-transactions-use-case.md in Resources */,
 				4A90207A2F9698150006B5D6 /* TASK-007-implement-dto-mapper.md in Resources */,
