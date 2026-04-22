@@ -14,7 +14,7 @@ flowchart TB
         TRV["TransactionRowView"]
         TLVM["TransactionListViewModel<br/><i>@Observable</i>"]
         TRVM["TransactionRowViewModel"]
-        SV["ErrorView · LoadingView<br/>OfflineBannerView"]
+        SV["ErrorView · OfflineBannerView"]
     end
 
     subgraph Domain["② Domain Layer — Business Logic"]
@@ -217,7 +217,7 @@ App/
 ├── UI/
 │   ├── TransactionList/    TransactionListView, TransactionListViewModel
 │   ├── TransactionRow/     TransactionRowView, TransactionRowViewModel
-│   └── Components/         ErrorView, LoadingView, OfflineBannerView
+│   └── Components/         ErrorView, OfflineBannerView
 └── DIContainer.swift
 ```
 
