@@ -62,6 +62,22 @@ When the remote fetch fails on **page 1**, the repository checks SwiftData for c
 
 Paginated requests (page > 1) that fail do **not** fall back to cache — they fail silently, keeping existing data on screen.
 
+### Persistence on `@MainActor`
+
+The `TransactionLocalDataSource` and `SwiftDataPersistenceService` are `@MainActor`-isolated. SwiftData's `ModelContext` is not `Sendable` and must be accessed from the actor it was created on. Since the `ModelContainer` is created on the main actor (in `DIContainer`), all persistence operations stay on `@MainActor` for safety.
+
+**Worst case scenario**: A pull-to-refresh on page 1 triggers `deleteAll()` + 30 `insert()` calls. Here's what actually happens at the SwiftData level:
+
+1. `modelContext.delete(model: TransactionEntity.self)` — marks all existing entities for deletion in the in-memory graph
+2. 30x `modelContext.insert(entity)` — adds 30 new objects to the in-memory graph
+3. **No explicit `save()` call** — we rely on SwiftData's `autosaveEnabled` (the default on `mainContext`). The actual SQLite write is deferred and batched by the framework, happening asynchronously at the next runloop checkpoint
+
+So the work on the main thread is purely **in-memory object graph manipulation** — no disk I/O. Marking ~30 objects for deletion and inserting 30 new lightweight structs (flat properties, no relationships, no blobs) is measured in **microseconds**, orders of magnitude below the 16ms frame budget at 60fps. Even with 150 cached entities (5 pages), the `deleteAll` still just marks in-memory objects — still microseconds.
+
+**Trade-off**: Since autosave defers the SQLite write, a crash before the next runloop checkpoint could lose unsaved changes. This is an acceptable trade-off because the cache is repopulated on every fresh network fetch anyway — losing a pending write just means the next launch fetches from the API instead of showing stale cache. The simplicity gained by staying on `@MainActor` (no cross-actor data races, straightforward concurrency model) outweighs this edge case.
+
+For a production app handling thousands of records or complex model graphs, moving to `@ModelActor` on a background thread with explicit saves would be the right call.
+
 ### Real-time connectivity
 
 `NetworkMonitor` wraps `NWPathMonitor` and is `@Observable`. The view observes `isConnected` directly to show/hide the offline banner with animation. The monitor is owned by `DIContainer` and passed as a concrete type to the view (not through the ViewModel) because SwiftUI's observation tracking doesn't work through existential types (`any Protocol`).
