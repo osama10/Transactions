@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A67E2B52F9814DE00D74D70 /* TESTING_PATH.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */; };
+		4A67E3892F9864E900D74D70 /* TECHNICAL_DEBRIEF.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3872F9864E900D74D70 /* TECHNICAL_DEBRIEF.md */; };
+		4A67E38A2F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */; };
 		4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */; };
 		4A9020572F9672CB0006B5D6 /* PRODUCT_SPEC.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */; };
 		4A9020592F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */; };
@@ -46,20 +48,14 @@
 			remoteGlobalIDString = 4A90201D2F9671CD0006B5D6;
 			remoteInfo = "Qonto-App";
 		};
-		4A9020362F9671D00006B5D6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4A9020162F9671CD0006B5D6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A90201D2F9671CD0006B5D6;
-			remoteInfo = "Qonto-App";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TESTING_PATH.md; sourceTree = "<group>"; };
+		4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ARCHITECTURE_DIAGRAM.md; sourceTree = "<group>"; };
+		4A67E3872F9864E900D74D70 /* TECHNICAL_DEBRIEF.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TECHNICAL_DEBRIEF.md; sourceTree = "<group>"; };
 		4A90201E2F9671CD0006B5D6 /* Qonto-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qonto-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Qonto-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A9020352F9671D00006B5D6 /* Qonto-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Qonto-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Api-Doc.pdf"; sourceTree = "<group>"; };
 		4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRODUCT_SPEC.md; sourceTree = "<group>"; };
 		4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = IMPLEMENTATION_PLAN.md; sourceTree = "<group>"; };
@@ -118,19 +114,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A9020322F9671D00006B5D6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A67E3882F9864E900D74D70 /* Architecture Debrief */ = {
+			isa = PBXGroup;
+			children = (
+				4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */,
+				4A67E3872F9864E900D74D70 /* TECHNICAL_DEBRIEF.md */,
+			);
+			path = "Architecture Debrief";
+			sourceTree = "<group>";
+		};
 		4A9020152F9671CD0006B5D6 = {
 			isa = PBXGroup;
 			children = (
+				4A67E3882F9864E900D74D70 /* Architecture Debrief */,
 				4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */,
 				4A9020742F9698150006B5D6 /* tasks */,
 				4A90205A2F968AB50006B5D6 /* AGENT_REVIEW.md */,
@@ -148,7 +147,6 @@
 			children = (
 				4A90201E2F9671CD0006B5D6 /* Qonto-App.app */,
 				4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */,
-				4A9020352F9671D00006B5D6 /* Qonto-AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,26 +230,6 @@
 			productReference = 4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4A9020342F9671D00006B5D6 /* Qonto-AppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4A9020452F9671D00006B5D6 /* Build configuration list for PBXNativeTarget "Qonto-AppUITests" */;
-			buildPhases = (
-				4A9020312F9671D00006B5D6 /* Sources */,
-				4A9020322F9671D00006B5D6 /* Frameworks */,
-				4A9020332F9671D00006B5D6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4A9020372F9671D00006B5D6 /* PBXTargetDependency */,
-			);
-			name = "Qonto-AppUITests";
-			packageProductDependencies = (
-			);
-			productName = "Qonto-AppUITests";
-			productReference = 4A9020352F9671D00006B5D6 /* Qonto-AppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,10 +244,6 @@
 						CreatedOnToolsVersion = 26.4;
 					};
 					4A90202A2F9671D00006B5D6 = {
-						CreatedOnToolsVersion = 26.4;
-						TestTargetID = 4A90201D2F9671CD0006B5D6;
-					};
-					4A9020342F9671D00006B5D6 = {
 						CreatedOnToolsVersion = 26.4;
 						TestTargetID = 4A90201D2F9671CD0006B5D6;
 					};
@@ -291,7 +265,6 @@
 			targets = (
 				4A90201D2F9671CD0006B5D6 /* Qonto-App */,
 				4A90202A2F9671D00006B5D6 /* Qonto-AppTests */,
-				4A9020342F9671D00006B5D6 /* Qonto-AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,6 +279,8 @@
 				4A90205B2F968AB50006B5D6 /* AGENT_REVIEW.md in Resources */,
 				4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */,
 				4A9020572F9672CB0006B5D6 /* PRODUCT_SPEC.md in Resources */,
+				4A67E3892F9864E900D74D70 /* TECHNICAL_DEBRIEF.md in Resources */,
+				4A67E38A2F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md in Resources */,
 				4A9020752F9698150006B5D6 /* TASK-010-implement-local-data-source.md in Resources */,
 				4A9020762F9698150006B5D6 /* TASK-009-implement-remote-data-source.md in Resources */,
 				4A9020772F9698150006B5D6 /* MASTER_TASK.md in Resources */,
@@ -340,13 +315,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A9020332F9671D00006B5D6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -364,13 +332,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A9020312F9671D00006B5D6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -378,11 +339,6 @@
 			isa = PBXTargetDependency;
 			target = 4A90201D2F9671CD0006B5D6 /* Qonto-App */;
 			targetProxy = 4A90202C2F9671D00006B5D6 /* PBXContainerItemProxy */;
-		};
-		4A9020372F9671D00006B5D6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4A90201D2F9671CD0006B5D6 /* Qonto-App */;
-			targetProxy = 4A9020362F9671D00006B5D6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -610,44 +566,6 @@
 			};
 			name = Release;
 		};
-		4A9020462F9671D00006B5D6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.osama.app.Qonto-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Qonto-App";
-			};
-			name = Debug;
-		};
-		4A9020472F9671D00006B5D6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.osama.app.Qonto-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Qonto-App";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -674,15 +592,6 @@
 			buildConfigurations = (
 				4A9020432F9671D00006B5D6 /* Debug */,
 				4A9020442F9671D00006B5D6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4A9020452F9671D00006B5D6 /* Build configuration list for PBXNativeTarget "Qonto-AppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A9020462F9671D00006B5D6 /* Debug */,
-				4A9020472F9671D00006B5D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
