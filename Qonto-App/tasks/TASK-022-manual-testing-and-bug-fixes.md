@@ -12,10 +12,11 @@ Phase 6: Polish. All features are implemented. This task validates everything wo
 
 **Happy path:**
 - App launches and loads first page of transactions
-- Transactions display correctly (counterparty, amount, date, status)
-- Amounts are color-coded (green for credit, default for debit)
-- Status badges show correct colors
-- Transactions are grouped by date, sorted most recent first
+- Transactions display correctly (counterparty name, amount, date, status badge)
+- Amounts are color-coded (green with "+" for credit, default with "-" for debit)
+- Status badges show correct colors (green=Completed, orange=Pending, red=Declined)
+- Operation icon matches method (creditcard=Card, arrows=Transfer, building=Direct Debit)
+- Method description and transaction description shown on second line
 
 **Pagination:**
 - Scrolling near bottom triggers loading more transactions
@@ -27,21 +28,26 @@ Phase 6: Polish. All features are implemented. This task validates everything wo
 **Pull-to-refresh:**
 - Pull down refreshes the list from page 1
 - Old data is replaced with fresh data
-- Pagination resets after refresh
+- Pagination resets after refresh (can scroll to load more again)
 
-**Offline:**
-- Kill network (airplane mode) after loading data -> cached data still visible
-- Offline banner appears with correct message
-- Kill network before first load with no cache -> error screen with retry
-- Restore network and retry -> loads successfully
+**Offline banner (real-time):**
+- Turn off wifi -> red "No Internet" banner appears at top instantly
+- Turn on wifi -> banner disappears with animation
+- Banner pushes list content down (doesn't overlap)
+
+**Offline with cache:**
+- Load data -> airplane mode -> cached data still visible on screen
+- Kill and relaunch app in airplane mode -> cached data loads from SwiftData
+
+**Offline without cache:**
+- First launch in airplane mode (no cache) -> error screen with "Try Again" button
+- Restore network -> tap "Try Again" -> loads successfully
 
 **Error states:**
 - Error view appears on first load failure (no cache)
-- Retry button works
-- Pagination error shows inline, existing data stays visible
-
-**Empty state:**
-- If API returns 0 results -> "No transactions yet" screen
+- Retry button triggers fresh load from page 1
+- Pagination failure is silent — existing data stays, user can scroll again
+- Refresh failure with data is silent — existing data stays
 
 **Edge cases:**
 - Rotate device -> layout adapts

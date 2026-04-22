@@ -19,7 +19,7 @@ struct TransactionRepository: TransactionRepositoryProtocol {
     func fetchTransactions(page: Int, results: Int) async throws -> FetchResult {
         do {
             let transactions = try await fetchRemote(page: page, results: results)
-            try await cacheLocally(transactions: transactions, page: page)
+            await cacheLocally(transactions: transactions, page: page)
             return .fresh(transactions)
         } catch {
             if page == 1, let cached = await loadCachedTransactions() {
@@ -40,10 +40,8 @@ struct TransactionRepository: TransactionRepositoryProtocol {
         return TransactionDTOMapper.mapToDomain(dtos: response.results)
     }
 
-    private func cacheLocally(transactions: [Transaction], page: Int) async throws {
+    private func cacheLocally(transactions: [Transaction], page: Int) async {
         do {
-            try Task.checkCancellation()
-
             if page == 1 {
                 try await localDataSource.deleteAll()
             }
@@ -51,8 +49,6 @@ struct TransactionRepository: TransactionRepositoryProtocol {
                 TransactionEntityMapper.mapToEntity(domain: $0, page: page)
             }
             try await localDataSource.save(entities: entities, page: page)
-        } catch is CancellationError {
-            throw CancellationError()
         } catch {
             // Cache save failure is non-fatal; we still return the remote data
         }

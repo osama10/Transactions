@@ -3,6 +3,9 @@ import Foundation
 @MainActor
 @Observable
 final class TransactionListViewModel {
+    
+    // MARK: - Contstant
+    private let errorMessage = "Something went wrong. Please try again."
 
     // MARK: - ViewState
 
@@ -22,7 +25,7 @@ final class TransactionListViewModel {
     private(set) var transactions: [Transaction] = []
     private(set) var isLoadingMore = false
     private(set) var hasMorePages = true
-
+    
     // MARK: - Private State
 
     private var currentPage = 1
@@ -44,7 +47,7 @@ final class TransactionListViewModel {
             handleInitialResult(result)
             currentPage = 1
         } catch {
-            viewState = .error(error.localizedDescription)
+            viewState = .error(errorMessage)
         }
     }
 
@@ -72,12 +75,10 @@ final class TransactionListViewModel {
             guard !result.isCached else { return }
             handleInitialResult(result)
             currentPage = 1
-        } catch is CancellationError {
-            // Refresh was cancelled — keep current state
         } catch {
             // If we have data, fail silently. Otherwise show error screen.
             if transactions.isEmpty {
-                viewState = .error(error.localizedDescription)
+                viewState = .error(errorMessage)
             }
         }
     }
@@ -94,7 +95,7 @@ final class TransactionListViewModel {
         transactions = result.transactions
 
         if result.isCached {
-            viewState = transactions.isEmpty ? .error("No cached data available.") : .loaded
+            viewState = transactions.isEmpty ? .error(errorMessage) : .loaded
             hasMorePages = false
         } else {
             viewState = .loaded

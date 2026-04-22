@@ -73,7 +73,7 @@ struct TransactionListViewModelTests {
         await vm.loadInitialTransactions()
 
         if case .error(let message) = vm.viewState {
-            #expect(message == "Network error")
+            #expect(message == "Something went wrong. Please try again.")
         } else {
             Issue.record("Expected .error state, got \(vm.viewState)")
         }

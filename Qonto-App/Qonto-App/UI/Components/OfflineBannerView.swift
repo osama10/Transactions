@@ -2,17 +2,17 @@ import SwiftUI
 
 struct OfflineBannerView: View {
     var body: some View {
-        HStack {
+        HStack(spacing: 6) {
             Image(systemName: "wifi.slash")
+                .font(.caption)
 
             Text("No Internet")
-                .font(.subheadline)
+                .font(.caption)
         }
-        .foregroundStyle(.secondary)
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.red.opacity(0.15), in: .rect(cornerRadius: 8))
-        .padding(.horizontal)
+        .foregroundStyle(.white)
+        .padding(.vertical, 6)
+        .frame(maxWidth: .infinity)
+        .background(Color(.systemRed))
     }
 }
 

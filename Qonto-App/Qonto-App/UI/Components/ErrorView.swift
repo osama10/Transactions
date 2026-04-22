@@ -6,9 +6,7 @@ struct ErrorView: View {
 
     var body: some View {
         ContentUnavailableView {
-            Label("Something went wrong", systemImage: "exclamationmark.triangle")
-        } description: {
-            Text(message)
+            Label(message, systemImage: "exclamationmark.triangle")
         } actions: {
             Button("Try Again", action: retryAction)
                 .buttonStyle(.borderedProminent)

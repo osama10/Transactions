@@ -101,11 +101,6 @@
 			path = "Qonto-AppTests";
 			sourceTree = "<group>";
 		};
-		4A9020382F9671D00006B5D6 /* Qonto-AppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Qonto-AppUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +139,6 @@
 				4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */,
 				4A9020202F9671CD0006B5D6 /* Qonto-App */,
 				4A90202E2F9671D00006B5D6 /* Qonto-AppTests */,
-				4A9020382F9671D00006B5D6 /* Qonto-AppUITests */,
 				4A90201F2F9671CD0006B5D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -250,9 +244,6 @@
 			);
 			dependencies = (
 				4A9020372F9671D00006B5D6 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				4A9020382F9671D00006B5D6 /* Qonto-AppUITests */,
 			);
 			name = "Qonto-AppUITests";
 			packageProductDependencies = (
