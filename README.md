@@ -4,7 +4,7 @@ This app is a SwiftUI-based transaction list experience that fetches paginated b
 
 The implementation is designed to showcase a practical iOS architecture that balances readability, testability, and production-minded tradeoffs. It focuses on a single primary flow: loading transactions, paginating as the user scrolls, and gracefully falling back to cached data when the network is unavailable.
 
-See the architecture diagrams here: [`Qonto-App/Architecture/ARCHITECTURE_DIAGRAM.md`](Qonto-App/Architecture/ARCHITECTURE_DIAGRAM.md).
+See the app screenshot here: [`Qonto-App/transaction-list.png`](Qonto-App/transaction-list.png).
 
 **Tech stack:**
 - Xcode 26 on macOS
