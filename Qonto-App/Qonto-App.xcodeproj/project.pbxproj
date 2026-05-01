@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A3B76842FA12E6000202873 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B76832FA12E6000202873 /* CLAUDE.md */; };
+		4A67E2B52F9814DE00D74D70 /* TESTING_PATH.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */; };
+		4A67E3892F9864E900D74D70 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3872F9864E900D74D70 /* README.md */; };
+		4A67E38A2F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */; };
+		4A67E3F02F98742D00D74D70 /* AGENTIC_AI_USAGE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */; };
+		4A8C6A2B2FA4C7CF00DD37AA /* transaction-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C6A2A2FA4C7CF00DD37AA /* transaction-list.png */; };
+		4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */; };
+		4A9020572F9672CB0006B5D6 /* PRODUCT_SPEC.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */; };
+		4A9020592F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */; };
+		4A90205B2F968AB50006B5D6 /* AGENT_REVIEW.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90205A2F968AB50006B5D6 /* AGENT_REVIEW.md */; };
+		4A9020752F9698150006B5D6 /* TASK-010-implement-local-data-source.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020662F9698150006B5D6 /* TASK-010-implement-local-data-source.md */; };
+		4A9020762F9698150006B5D6 /* TASK-009-implement-remote-data-source.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020652F9698150006B5D6 /* TASK-009-implement-remote-data-source.md */; };
+		4A9020772F9698150006B5D6 /* MASTER_TASK.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90205C2F9698150006B5D6 /* MASTER_TASK.md */; };
+		4A9020782F9698150006B5D6 /* TASK-022-manual-testing-and-bug-fixes.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020722F9698150006B5D6 /* TASK-022-manual-testing-and-bug-fixes.md */; };
+		4A9020792F9698150006B5D6 /* TASK-012-implement-fetch-transactions-use-case.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020682F9698150006B5D6 /* TASK-012-implement-fetch-transactions-use-case.md */; };
+		4A90207A2F9698150006B5D6 /* TASK-007-implement-dto-mapper.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020632F9698150006B5D6 /* TASK-007-implement-dto-mapper.md */; };
+		4A90207B2F9698150006B5D6 /* TASK-014-implement-transaction-list-viewmodel.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90206A2F9698150006B5D6 /* TASK-014-implement-transaction-list-viewmodel.md */; };
+		4A90207C2F9698150006B5D6 /* TASK-020-unit-tests-viewmodel.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020702F9698150006B5D6 /* TASK-020-unit-tests-viewmodel.md */; };
+		4A90207D2F9698150006B5D6 /* TASK-005-define-api-dtos.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020612F9698150006B5D6 /* TASK-005-define-api-dtos.md */; };
+		4A90207E2F9698150006B5D6 /* TASK-017-implement-supporting-views.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90206D2F9698150006B5D6 /* TASK-017-implement-supporting-views.md */; };
+		4A90207F2F9698150006B5D6 /* TASK-023-write-technical-debrief.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020732F9698150006B5D6 /* TASK-023-write-technical-debrief.md */; };
+		4A9020802F9698150006B5D6 /* TASK-016-implement-transaction-list-view.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90206C2F9698150006B5D6 /* TASK-016-implement-transaction-list-view.md */; };
+		4A9020812F9698150006B5D6 /* TASK-015-implement-transaction-row-view.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90206B2F9698150006B5D6 /* TASK-015-implement-transaction-row-view.md */; };
+		4A9020822F9698150006B5D6 /* TASK-019-unit-tests-mappers.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90206F2F9698150006B5D6 /* TASK-019-unit-tests-mappers.md */; };
+		4A9020832F9698150006B5D6 /* TASK-021-unit-tests-repository.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020712F9698150006B5D6 /* TASK-021-unit-tests-repository.md */; };
+		4A9020842F9698150006B5D6 /* TASK-011-define-repository-protocol.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020672F9698150006B5D6 /* TASK-011-define-repository-protocol.md */; };
+		4A9020852F9698150006B5D6 /* TASK-001-create-folder-structure.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90205D2F9698150006B5D6 /* TASK-001-create-folder-structure.md */; };
+		4A9020862F9698150006B5D6 /* TASK-003-implement-networking-layer.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90205F2F9698150006B5D6 /* TASK-003-implement-networking-layer.md */; };
+		4A9020872F9698150006B5D6 /* TASK-013-implement-transaction-repository.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020692F9698150006B5D6 /* TASK-013-implement-transaction-repository.md */; };
+		4A9020882F9698150006B5D6 /* TASK-006-define-swiftdata-entity.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020622F9698150006B5D6 /* TASK-006-define-swiftdata-entity.md */; };
+		4A9020892F9698150006B5D6 /* TASK-018-setup-di-container-and-app-wiring.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90206E2F9698150006B5D6 /* TASK-018-setup-di-container-and-app-wiring.md */; };
+		4A90208A2F9698150006B5D6 /* TASK-004-implement-persistence-controller.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020602F9698150006B5D6 /* TASK-004-implement-persistence-controller.md */; };
+		4A90208B2F9698150006B5D6 /* TASK-002-define-domain-models.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A90205E2F9698150006B5D6 /* TASK-002-define-domain-models.md */; };
+		4A90208C2F9698150006B5D6 /* TASK-008-implement-entity-mapper.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020642F9698150006B5D6 /* TASK-008-implement-entity-mapper.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A90202C2F9671D00006B5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A9020162F9671CD0006B5D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A90201D2F9671CD0006B5D6;
+			remoteInfo = "Qonto-App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A3B76832FA12E6000202873 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TESTING_PATH.md; sourceTree = "<group>"; };
+		4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ARCHITECTURE_DIAGRAM.md; sourceTree = "<group>"; };
+		4A67E3872F9864E900D74D70 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AGENTIC_AI_USAGE.md; sourceTree = "<group>"; };
+		4A8C6A2A2FA4C7CF00DD37AA /* transaction-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transaction-list.png"; sourceTree = "<group>"; };
+		4A90201E2F9671CD0006B5D6 /* Qonto-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qonto-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Qonto-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Api-Doc.pdf"; sourceTree = "<group>"; };
+		4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRODUCT_SPEC.md; sourceTree = "<group>"; };
+		4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = IMPLEMENTATION_PLAN.md; sourceTree = "<group>"; };
+		4A90205A2F968AB50006B5D6 /* AGENT_REVIEW.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AGENT_REVIEW.md; sourceTree = "<group>"; };
+		4A90205C2F9698150006B5D6 /* MASTER_TASK.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MASTER_TASK.md; sourceTree = "<group>"; };
+		4A90205D2F9698150006B5D6 /* TASK-001-create-folder-structure.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-001-create-folder-structure.md"; sourceTree = "<group>"; };
+		4A90205E2F9698150006B5D6 /* TASK-002-define-domain-models.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-002-define-domain-models.md"; sourceTree = "<group>"; };
+		4A90205F2F9698150006B5D6 /* TASK-003-implement-networking-layer.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-003-implement-networking-layer.md"; sourceTree = "<group>"; };
+		4A9020602F9698150006B5D6 /* TASK-004-implement-persistence-controller.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-004-implement-persistence-controller.md"; sourceTree = "<group>"; };
+		4A9020612F9698150006B5D6 /* TASK-005-define-api-dtos.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-005-define-api-dtos.md"; sourceTree = "<group>"; };
+		4A9020622F9698150006B5D6 /* TASK-006-define-swiftdata-entity.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-006-define-swiftdata-entity.md"; sourceTree = "<group>"; };
+		4A9020632F9698150006B5D6 /* TASK-007-implement-dto-mapper.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-007-implement-dto-mapper.md"; sourceTree = "<group>"; };
+		4A9020642F9698150006B5D6 /* TASK-008-implement-entity-mapper.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-008-implement-entity-mapper.md"; sourceTree = "<group>"; };
+		4A9020652F9698150006B5D6 /* TASK-009-implement-remote-data-source.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-009-implement-remote-data-source.md"; sourceTree = "<group>"; };
+		4A9020662F9698150006B5D6 /* TASK-010-implement-local-data-source.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-010-implement-local-data-source.md"; sourceTree = "<group>"; };
+		4A9020672F9698150006B5D6 /* TASK-011-define-repository-protocol.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-011-define-repository-protocol.md"; sourceTree = "<group>"; };
+		4A9020682F9698150006B5D6 /* TASK-012-implement-fetch-transactions-use-case.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-012-implement-fetch-transactions-use-case.md"; sourceTree = "<group>"; };
+		4A9020692F9698150006B5D6 /* TASK-013-implement-transaction-repository.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-013-implement-transaction-repository.md"; sourceTree = "<group>"; };
+		4A90206A2F9698150006B5D6 /* TASK-014-implement-transaction-list-viewmodel.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-014-implement-transaction-list-viewmodel.md"; sourceTree = "<group>"; };
+		4A90206B2F9698150006B5D6 /* TASK-015-implement-transaction-row-view.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-015-implement-transaction-row-view.md"; sourceTree = "<group>"; };
+		4A90206C2F9698150006B5D6 /* TASK-016-implement-transaction-list-view.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-016-implement-transaction-list-view.md"; sourceTree = "<group>"; };
+		4A90206D2F9698150006B5D6 /* TASK-017-implement-supporting-views.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-017-implement-supporting-views.md"; sourceTree = "<group>"; };
+		4A90206E2F9698150006B5D6 /* TASK-018-setup-di-container-and-app-wiring.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-018-setup-di-container-and-app-wiring.md"; sourceTree = "<group>"; };
+		4A90206F2F9698150006B5D6 /* TASK-019-unit-tests-mappers.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-019-unit-tests-mappers.md"; sourceTree = "<group>"; };
+		4A9020702F9698150006B5D6 /* TASK-020-unit-tests-viewmodel.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-020-unit-tests-viewmodel.md"; sourceTree = "<group>"; };
+		4A9020712F9698150006B5D6 /* TASK-021-unit-tests-repository.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-021-unit-tests-repository.md"; sourceTree = "<group>"; };
+		4A9020722F9698150006B5D6 /* TASK-022-manual-testing-and-bug-fixes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-022-manual-testing-and-bug-fixes.md"; sourceTree = "<group>"; };
+		4A9020732F9698150006B5D6 /* TASK-023-write-technical-debrief.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "TASK-023-write-technical-debrief.md"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4A9020202F9671CD0006B5D6 /* Qonto-App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Qonto-App";
+			sourceTree = "<group>";
+		};
+		4A90202E2F9671D00006B5D6 /* Qonto-AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Qonto-AppTests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A90201B2F9671CD0006B5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A9020282F9671D00006B5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A8C69C12FA4C2A100DD37AA /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		4A8C69C22FA4C2A100DD37AA /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		4A8C6A272FA4C50A00DD37AA /* Agents Doc */ = {
+			isa = PBXGroup;
+			children = (
+				4A3B76832FA12E6000202873 /* CLAUDE.md */,
+				4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */,
+				4A90205A2F968AB50006B5D6 /* AGENT_REVIEW.md */,
+			);
+			path = "Agents Doc";
+			sourceTree = "<group>";
+		};
+		4A8C6A282FA4C50A00DD37AA /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */,
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
+		4A8C6A292FA4C50A00DD37AA /* Testing Plan */ = {
+			isa = PBXGroup;
+			children = (
+				4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */,
+			);
+			path = "Testing Plan";
+			sourceTree = "<group>";
+		};
+		4A9020152F9671CD0006B5D6 = {
+			isa = PBXGroup;
+			children = (
+				4A9020742F9698150006B5D6 /* tasks */,
+				4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */,
+				4A9020202F9671CD0006B5D6 /* Qonto-App */,
+				4A90202E2F9671D00006B5D6 /* Qonto-AppTests */,
+				4A90201F2F9671CD0006B5D6 /* Products */,
+				4A8C69C12FA4C2A100DD37AA /* Spec */,
+				4A8C69C22FA4C2A100DD37AA /* Architecture */,
+				4A8C6A272FA4C50A00DD37AA /* Agents Doc */,
+				4A8C6A282FA4C50A00DD37AA /* Plan */,
+				4A8C6A292FA4C50A00DD37AA /* Testing Plan */,
+				4A67E3872F9864E900D74D70 /* README.md */,
+				4A8C6A2A2FA4C7CF00DD37AA /* transaction-list.png */,
+			);
+			sourceTree = "<group>";
+		};
+		4A90201F2F9671CD0006B5D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A90201E2F9671CD0006B5D6 /* Qonto-App.app */,
+				4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A9020742F9698150006B5D6 /* tasks */ = {
+			isa = PBXGroup;
+			children = (
+				4A90205C2F9698150006B5D6 /* MASTER_TASK.md */,
+				4A90205D2F9698150006B5D6 /* TASK-001-create-folder-structure.md */,
+				4A90205E2F9698150006B5D6 /* TASK-002-define-domain-models.md */,
+				4A90205F2F9698150006B5D6 /* TASK-003-implement-networking-layer.md */,
+				4A9020602F9698150006B5D6 /* TASK-004-implement-persistence-controller.md */,
+				4A9020612F9698150006B5D6 /* TASK-005-define-api-dtos.md */,
+				4A9020622F9698150006B5D6 /* TASK-006-define-swiftdata-entity.md */,
+				4A9020632F9698150006B5D6 /* TASK-007-implement-dto-mapper.md */,
+				4A9020642F9698150006B5D6 /* TASK-008-implement-entity-mapper.md */,
+				4A9020652F9698150006B5D6 /* TASK-009-implement-remote-data-source.md */,
+				4A9020662F9698150006B5D6 /* TASK-010-implement-local-data-source.md */,
+				4A9020672F9698150006B5D6 /* TASK-011-define-repository-protocol.md */,
+				4A9020682F9698150006B5D6 /* TASK-012-implement-fetch-transactions-use-case.md */,
+				4A9020692F9698150006B5D6 /* TASK-013-implement-transaction-repository.md */,
+				4A90206A2F9698150006B5D6 /* TASK-014-implement-transaction-list-viewmodel.md */,
+				4A90206B2F9698150006B5D6 /* TASK-015-implement-transaction-row-view.md */,
+				4A90206C2F9698150006B5D6 /* TASK-016-implement-transaction-list-view.md */,
+				4A90206D2F9698150006B5D6 /* TASK-017-implement-supporting-views.md */,
+				4A90206E2F9698150006B5D6 /* TASK-018-setup-di-container-and-app-wiring.md */,
+				4A90206F2F9698150006B5D6 /* TASK-019-unit-tests-mappers.md */,
+				4A9020702F9698150006B5D6 /* TASK-020-unit-tests-viewmodel.md */,
+				4A9020712F9698150006B5D6 /* TASK-021-unit-tests-repository.md */,
+				4A9020722F9698150006B5D6 /* TASK-022-manual-testing-and-bug-fixes.md */,
+				4A9020732F9698150006B5D6 /* TASK-023-write-technical-debrief.md */,
+			);
+			path = tasks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A90201D2F9671CD0006B5D6 /* Qonto-App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A90203F2F9671D00006B5D6 /* Build configuration list for PBXNativeTarget "Qonto-App" */;
+			buildPhases = (
+				4A90201A2F9671CD0006B5D6 /* Sources */,
+				4A90201B2F9671CD0006B5D6 /* Frameworks */,
+				4A90201C2F9671CD0006B5D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4A9020202F9671CD0006B5D6 /* Qonto-App */,
+			);
+			name = "Qonto-App";
+			packageProductDependencies = (
+			);
+			productName = "Qonto-App";
+			productReference = 4A90201E2F9671CD0006B5D6 /* Qonto-App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A90202A2F9671D00006B5D6 /* Qonto-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A9020422F9671D00006B5D6 /* Build configuration list for PBXNativeTarget "Qonto-AppTests" */;
+			buildPhases = (
+				4A9020272F9671D00006B5D6 /* Sources */,
+				4A9020282F9671D00006B5D6 /* Frameworks */,
+				4A9020292F9671D00006B5D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A90202D2F9671D00006B5D6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				4A90202E2F9671D00006B5D6 /* Qonto-AppTests */,
+			);
+			name = "Qonto-AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Qonto-AppTests";
+			productReference = 4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A9020162F9671CD0006B5D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					4A90201D2F9671CD0006B5D6 = {
+						CreatedOnToolsVersion = 26.4;
+					};
+					4A90202A2F9671D00006B5D6 = {
+						CreatedOnToolsVersion = 26.4;
+						TestTargetID = 4A90201D2F9671CD0006B5D6;
+					};
+				};
+			};
+			buildConfigurationList = 4A9020192F9671CD0006B5D6 /* Build configuration list for PBXProject "Qonto-App" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A9020152F9671CD0006B5D6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4A90201F2F9671CD0006B5D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A90201D2F9671CD0006B5D6 /* Qonto-App */,
+				4A90202A2F9671D00006B5D6 /* Qonto-AppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A90201C2F9671CD0006B5D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A67E2B52F9814DE00D74D70 /* TESTING_PATH.md in Resources */,
+				4A9020592F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md in Resources */,
+				4A90205B2F968AB50006B5D6 /* AGENT_REVIEW.md in Resources */,
+				4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */,
+				4A9020572F9672CB0006B5D6 /* PRODUCT_SPEC.md in Resources */,
+				4A67E3892F9864E900D74D70 /* README.md in Resources */,
+				4A3B76842FA12E6000202873 /* CLAUDE.md in Resources */,
+				4A67E38A2F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md in Resources */,
+				4A9020752F9698150006B5D6 /* TASK-010-implement-local-data-source.md in Resources */,
+				4A9020762F9698150006B5D6 /* TASK-009-implement-remote-data-source.md in Resources */,
+				4A9020772F9698150006B5D6 /* MASTER_TASK.md in Resources */,
+				4A67E3F02F98742D00D74D70 /* AGENTIC_AI_USAGE.md in Resources */,
+				4A9020782F9698150006B5D6 /* TASK-022-manual-testing-and-bug-fixes.md in Resources */,
+				4A9020792F9698150006B5D6 /* TASK-012-implement-fetch-transactions-use-case.md in Resources */,
+				4A90207A2F9698150006B5D6 /* TASK-007-implement-dto-mapper.md in Resources */,
+				4A90207B2F9698150006B5D6 /* TASK-014-implement-transaction-list-viewmodel.md in Resources */,
+				4A8C6A2B2FA4C7CF00DD37AA /* transaction-list.png in Resources */,
+				4A90207C2F9698150006B5D6 /* TASK-020-unit-tests-viewmodel.md in Resources */,
+				4A90207D2F9698150006B5D6 /* TASK-005-define-api-dtos.md in Resources */,
+				4A90207E2F9698150006B5D6 /* TASK-017-implement-supporting-views.md in Resources */,
+				4A90207F2F9698150006B5D6 /* TASK-023-write-technical-debrief.md in Resources */,
+				4A9020802F9698150006B5D6 /* TASK-016-implement-transaction-list-view.md in Resources */,
+				4A9020812F9698150006B5D6 /* TASK-015-implement-transaction-row-view.md in Resources */,
+				4A9020822F9698150006B5D6 /* TASK-019-unit-tests-mappers.md in Resources */,
+				4A9020832F9698150006B5D6 /* TASK-021-unit-tests-repository.md in Resources */,
+				4A9020842F9698150006B5D6 /* TASK-011-define-repository-protocol.md in Resources */,
+				4A9020852F9698150006B5D6 /* TASK-001-create-folder-structure.md in Resources */,
+				4A9020862F9698150006B5D6 /* TASK-003-implement-networking-layer.md in Resources */,
+				4A9020872F9698150006B5D6 /* TASK-013-implement-transaction-repository.md in Resources */,
+				4A9020882F9698150006B5D6 /* TASK-006-define-swiftdata-entity.md in Resources */,
+				4A9020892F9698150006B5D6 /* TASK-018-setup-di-container-and-app-wiring.md in Resources */,
+				4A90208A2F9698150006B5D6 /* TASK-004-implement-persistence-controller.md in Resources */,
+				4A90208B2F9698150006B5D6 /* TASK-002-define-domain-models.md in Resources */,
+				4A90208C2F9698150006B5D6 /* TASK-008-implement-entity-mapper.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A9020292F9671D00006B5D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A90201A2F9671CD0006B5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A9020272F9671D00006B5D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A90202D2F9671D00006B5D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A90201D2F9671CD0006B5D6 /* Qonto-App */;
+			targetProxy = 4A90202C2F9671D00006B5D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4A90203D2F9671D00006B5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A90203E2F9671D00006B5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A9020402F9671D00006B5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.osama.app.Qonto-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A9020412F9671D00006B5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.osama.app.Qonto-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A9020432F9671D00006B5D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.osama.app.Qonto-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Qonto-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Qonto-App";
+			};
+			name = Debug;
+		};
+		4A9020442F9671D00006B5D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.osama.app.Qonto-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Qonto-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Qonto-App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A9020192F9671CD0006B5D6 /* Build configuration list for PBXProject "Qonto-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A90203D2F9671D00006B5D6 /* Debug */,
+				4A90203E2F9671D00006B5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A90203F2F9671D00006B5D6 /* Build configuration list for PBXNativeTarget "Qonto-App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A9020402F9671D00006B5D6 /* Debug */,
+				4A9020412F9671D00006B5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A9020422F9671D00006B5D6 /* Build configuration list for PBXNativeTarget "Qonto-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A9020432F9671D00006B5D6 /* Debug */,
+				4A9020442F9671D00006B5D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A9020162F9671CD0006B5D6 /* Project object */;
+}
