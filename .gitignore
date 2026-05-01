@@ -8,6 +8,7 @@
 # Build folders
 DerivedData/
 build/
+**/Products/
 
 # macOS
 .DS_Store
