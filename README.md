@@ -6,8 +6,6 @@ This app is a SwiftUI-based transaction list experience that fetches paginated b
 
 The implementation is designed to showcase a practical iOS architecture that balances readability, testability, and production-minded tradeoffs. It focuses on a single primary flow: loading transactions, paginating as the user scrolls, and gracefully falling back to cached data when the network is unavailable.
 
-![Transaction list screenshot](transaction-list.png)
-
 **Tech stack:**
 - Xcode 26 on macOS
 - iOS 26 target, Swift 6.2
@@ -20,7 +18,7 @@ The implementation is designed to showcase a practical iOS architecture that bal
 
 The app follows **Clean Architecture combined with MVVM**, organized into four distinct layers. Each layer has a clear responsibility and a well-defined boundary.
 
-> For detailed diagrams (overview, data flow, sequence diagram, folder structure), see [`Architecture/ARCHITECTURE_DIAGRAM.md`](Architecture/ARCHITECTURE_DIAGRAM.md).
+> For detailed diagrams (overview, data flow, sequence diagram, folder structure), see [`Qonto-App/Architecture/ARCHITECTURE_DIAGRAM.md`](Architecture/ARCHITECTURE_DIAGRAM.md).
 
 ### Layer overview
 
