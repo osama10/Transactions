@@ -68,6 +68,9 @@ struct TransactionEntityMapper {
     }
 
     static func mapToDomain(entities: [TransactionEntity]) -> [Transaction] {
-        entities.compactMap { try? mapToDomain(entity: $0) }
+        entities.compactMap {
+            try? mapToDomain(entity: $0)
+                
+        }
     }
 }

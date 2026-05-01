@@ -10,6 +10,5 @@ struct Qonto_AppApp: App {
         WindowGroup {
             TransactionListView(viewModel: diContainer.viewModel, networkMonitor: diContainer.networkMonitor)
         }
-        .modelContainer(diContainer.modelContainer)
     }
 }

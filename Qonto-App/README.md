@@ -1,14 +1,18 @@
-# Technical Debrief
+# Architecture README
 
-## 1. Personal Context
+## 1. App Introduction
 
-I approached this skills test in a relaxed state with no particular time pressure. I had the flexibility to plan thoroughly before writing any code, which allowed me to think through the architecture upfront rather than iterating toward it reactively.
+This app is a SwiftUI-based transaction list experience that fetches paginated banking transactions, presents them in a clear and lightweight interface, and keeps previously loaded data available offline through local persistence.
 
-**Environment & tools:**
+The implementation is designed to showcase a practical iOS architecture that balances readability, testability, and production-minded tradeoffs. It focuses on a single primary flow: loading transactions, paginating as the user scrolls, and gracefully falling back to cached data when the network is unavailable.
+
+![Transaction list screenshot](transaction-list.png)
+
+**Tech stack:**
 - Xcode 26 on macOS
 - iOS 26 target, Swift 6.2
-- No third-party dependencies — everything is built with Apple frameworks (SwiftUI, SwiftData, Network, Foundation)
-- Git for version control with a structured branching strategy
+- Apple frameworks only: SwiftUI, SwiftData, Network, Foundation
+- Git for version control
 
 ---
 
@@ -16,7 +20,7 @@ I approached this skills test in a relaxed state with no particular time pressur
 
 The app follows **Clean Architecture combined with MVVM**, organized into four distinct layers. Each layer has a clear responsibility and a well-defined boundary.
 
-> For detailed diagrams (overview, data flow, sequence diagram, folder structure), see [`ARCHITECTURE_DIAGRAM.md`](ARCHITECTURE_DIAGRAM.md).
+> For detailed diagrams (overview, data flow, sequence diagram, folder structure), see [`Architecture/ARCHITECTURE_DIAGRAM.md`](Architecture/ARCHITECTURE_DIAGRAM.md).
 
 ### Layer overview
 
@@ -233,9 +237,9 @@ Because all dependencies flow through `DIContainer` via initializer parameters, 
 
 ## 9. AI-Assisted Development
 
-I used Claude as a **structured engineering assistant** — not as a code generator. The workflow was: spec first, plan second, then execute one task at a time with approval gates between each step. Every AI output was reviewed, and corrections were tracked in `AGENT_REVIEW.md`. The AI operated within strict constraints: no jumping ahead, no redesigning the plan, no merging tasks.
+I used Claude as a **structured engineering assistant** — not as a code generator. The workflow was: spec first, plan second, then execute one task at a time with approval gates between each step. Every AI output was reviewed, and corrections were tracked in `Agents Doc/AGENT_REVIEW.md`. The AI operated within strict constraints: no jumping ahead, no redesigning the plan, no merging tasks.
 
-For full details on the prompting strategy, concrete examples of corrections (architecture violations, offline strategy fixes, over-engineering removal), and the control principles applied, see [`AGENTIC_AI_USAGE.md`](../AGENTIC_AI_USAGE.md).
+For full details on the prompting strategy, concrete examples of corrections (architecture violations, offline strategy fixes, over-engineering removal), and the control principles applied, see [`Agents Doc/AGENTIC_AI_USAGE.md`](Agents%20Doc/AGENTIC_AI_USAGE.md).
 
 ---
 

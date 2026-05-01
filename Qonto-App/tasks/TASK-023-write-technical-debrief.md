@@ -7,7 +7,7 @@ Create the Markdown debrief document required by the product spec, explaining ar
 Phase 6: Documentation. This is the final deliverable alongside the working app.
 
 ## Requirements
-Create `TECHNICAL_DEBRIEF.md` in the project root (`Qonto-App/`).
+Create the technical architecture overview document at `README.md` in the project root (`Qonto-App/`).
 
 ### Sections to include (from product spec):
 
@@ -47,7 +47,7 @@ Create `TECHNICAL_DEBRIEF.md` in the project root (`Qonto-App/`).
    - Authentication, multi-account support
 
 ## Acceptance Criteria
-- `TECHNICAL_DEBRIEF.md` exists in `Qonto-App/`
+- `README.md` exists in `Qonto-App/`
 - Covers all 7 sections from the product spec
 - Written clearly — suitable for a technical interview discussion
 - Honest about trade-offs and what was intentionally left simple

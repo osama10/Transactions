@@ -1,7 +1,5 @@
 import Foundation
 
-/// Concrete repository that coordinates between remote and local data sources.
-/// Implements a network-first strategy with offline fallback on page 1.
 struct TransactionRepository: TransactionRepositoryProtocol {
 
     private let remoteDataSource: TransactionRemoteDataSourceProtocol

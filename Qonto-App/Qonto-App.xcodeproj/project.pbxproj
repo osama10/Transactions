@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3B76842FA12E6000202873 /* CLAUDE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A3B76832FA12E6000202873 /* CLAUDE.md */; };
 		4A67E2B52F9814DE00D74D70 /* TESTING_PATH.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */; };
-		4A67E3892F9864E900D74D70 /* TECHNICAL_DEBRIEF.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3872F9864E900D74D70 /* TECHNICAL_DEBRIEF.md */; };
+		4A67E3892F9864E900D74D70 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3872F9864E900D74D70 /* README.md */; };
 		4A67E38A2F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */; };
 		4A67E3F02F98742D00D74D70 /* AGENTIC_AI_USAGE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */; };
+		4A8C6A2B2FA4C7CF00DD37AA /* transaction-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A8C6A2A2FA4C7CF00DD37AA /* transaction-list.png */; };
 		4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */; };
 		4A9020572F9672CB0006B5D6 /* PRODUCT_SPEC.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */; };
 		4A9020592F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */; };
@@ -52,10 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A3B76832FA12E6000202873 /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
 		4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TESTING_PATH.md; sourceTree = "<group>"; };
 		4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ARCHITECTURE_DIAGRAM.md; sourceTree = "<group>"; };
-		4A67E3872F9864E900D74D70 /* TECHNICAL_DEBRIEF.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TECHNICAL_DEBRIEF.md; sourceTree = "<group>"; };
+		4A67E3872F9864E900D74D70 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AGENTIC_AI_USAGE.md; sourceTree = "<group>"; };
+		4A8C6A2A2FA4C7CF00DD37AA /* transaction-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transaction-list.png"; sourceTree = "<group>"; };
 		4A90201E2F9671CD0006B5D6 /* Qonto-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Qonto-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A90202B2F9671D00006B5D6 /* Qonto-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Qonto-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Api-Doc.pdf"; sourceTree = "<group>"; };
@@ -119,29 +123,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A67E3882F9864E900D74D70 /* Architecture Debrief */ = {
+		4A8C69C12FA4C2A100DD37AA /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		4A8C69C22FA4C2A100DD37AA /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
 				4A67E3862F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md */,
-				4A67E3872F9864E900D74D70 /* TECHNICAL_DEBRIEF.md */,
 			);
-			path = "Architecture Debrief";
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		4A8C6A272FA4C50A00DD37AA /* Agents Doc */ = {
+			isa = PBXGroup;
+			children = (
+				4A3B76832FA12E6000202873 /* CLAUDE.md */,
+				4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */,
+				4A90205A2F968AB50006B5D6 /* AGENT_REVIEW.md */,
+			);
+			path = "Agents Doc";
+			sourceTree = "<group>";
+		};
+		4A8C6A282FA4C50A00DD37AA /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */,
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
+		4A8C6A292FA4C50A00DD37AA /* Testing Plan */ = {
+			isa = PBXGroup;
+			children = (
+				4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */,
+			);
+			path = "Testing Plan";
 			sourceTree = "<group>";
 		};
 		4A9020152F9671CD0006B5D6 = {
 			isa = PBXGroup;
 			children = (
-				4A67E3EF2F98742D00D74D70 /* AGENTIC_AI_USAGE.md */,
-				4A67E3882F9864E900D74D70 /* Architecture Debrief */,
-				4A67E2B42F9814DE00D74D70 /* TESTING_PATH.md */,
 				4A9020742F9698150006B5D6 /* tasks */,
-				4A90205A2F968AB50006B5D6 /* AGENT_REVIEW.md */,
-				4A9020582F96749F0006B5D6 /* IMPLEMENTATION_PLAN.md */,
 				4A9020542F9672CB0006B5D6 /* Api-Doc.pdf */,
-				4A9020552F9672CB0006B5D6 /* PRODUCT_SPEC.md */,
 				4A9020202F9671CD0006B5D6 /* Qonto-App */,
 				4A90202E2F9671D00006B5D6 /* Qonto-AppTests */,
 				4A90201F2F9671CD0006B5D6 /* Products */,
+				4A8C69C12FA4C2A100DD37AA /* Spec */,
+				4A8C69C22FA4C2A100DD37AA /* Architecture */,
+				4A8C6A272FA4C50A00DD37AA /* Agents Doc */,
+				4A8C6A282FA4C50A00DD37AA /* Plan */,
+				4A8C6A292FA4C50A00DD37AA /* Testing Plan */,
+				4A67E3872F9864E900D74D70 /* README.md */,
+				4A8C6A2A2FA4C7CF00DD37AA /* transaction-list.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,7 +320,8 @@
 				4A90205B2F968AB50006B5D6 /* AGENT_REVIEW.md in Resources */,
 				4A9020562F9672CB0006B5D6 /* Api-Doc.pdf in Resources */,
 				4A9020572F9672CB0006B5D6 /* PRODUCT_SPEC.md in Resources */,
-				4A67E3892F9864E900D74D70 /* TECHNICAL_DEBRIEF.md in Resources */,
+				4A67E3892F9864E900D74D70 /* README.md in Resources */,
+				4A3B76842FA12E6000202873 /* CLAUDE.md in Resources */,
 				4A67E38A2F9864E900D74D70 /* ARCHITECTURE_DIAGRAM.md in Resources */,
 				4A9020752F9698150006B5D6 /* TASK-010-implement-local-data-source.md in Resources */,
 				4A9020762F9698150006B5D6 /* TASK-009-implement-remote-data-source.md in Resources */,
@@ -292,6 +331,7 @@
 				4A9020792F9698150006B5D6 /* TASK-012-implement-fetch-transactions-use-case.md in Resources */,
 				4A90207A2F9698150006B5D6 /* TASK-007-implement-dto-mapper.md in Resources */,
 				4A90207B2F9698150006B5D6 /* TASK-014-implement-transaction-list-viewmodel.md in Resources */,
+				4A8C6A2B2FA4C7CF00DD37AA /* transaction-list.png in Resources */,
 				4A90207C2F9698150006B5D6 /* TASK-020-unit-tests-viewmodel.md in Resources */,
 				4A90207D2F9698150006B5D6 /* TASK-005-define-api-dtos.md in Resources */,
 				4A90207E2F9698150006B5D6 /* TASK-017-implement-supporting-views.md in Resources */,

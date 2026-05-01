@@ -16,7 +16,7 @@ The goal was to:
 ## Process I Followed
 
 1. **Specification First**
-   - Created `PRODUCT_SPEC.md` to clearly define requirements, constraints, and expectations
+   - Created `Spec/PRODUCT_SPEC.md` to clearly define requirements, constraints, and expectations
 
 2. **Planning Before Coding**
    - Prompted AI to propose a full implementation plan
@@ -33,7 +33,7 @@ The goal was to:
 
 5. **Continuous Review & Correction**
    - Every output was reviewed
-   - Corrections were tracked in `AGENT_REVIEW.md`
+   - Corrections were tracked in `Agents Doc/AGENT_REVIEW.md`
 
 ---
 
@@ -64,7 +64,7 @@ You are an iOS senior engineer.
 
 DO NOT write code.
 
-Read PRODUCT_SPEC.md and propose:
+Read Spec/PRODUCT_SPEC.md and propose:
 - architecture
 - pagination strategy
 - offline strategy
@@ -82,7 +82,7 @@ Do not anticipate future tasks.
 
 Apply ONLY these corrections.
 Do not redesign the plan.
-Update AGENT_REVIEW.md with:
+Update Agents Doc/AGENT_REVIEW.md with:
 - mistake
 - location
 - fix
@@ -128,7 +128,7 @@ Fix:
 
 All corrections and decisions were tracked in:
 
-AGENT_REVIEW.md
+`Agents Doc/AGENT_REVIEW.md`
 
 This file documents:
 - mistakes identified
