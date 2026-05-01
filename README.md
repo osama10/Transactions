@@ -1,5 +1,3 @@
-# Architecture README
-
 ## 1. App Introduction
 
 This app is a SwiftUI-based transaction list experience that fetches paginated banking transactions, presents them in a clear and lightweight interface, and keeps previously loaded data available offline through local persistence.
